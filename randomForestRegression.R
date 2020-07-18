@@ -7,14 +7,8 @@ library(raster)
 library(e1071)
 library(randomForest)
 #library(corrgram)
-library(spatial)
-
-
-# Testing ----
-radar = raster("Radar_Images/tiff/s_0025xx/s_00258001_tiff.tif")
-radar_mat = as.matrix(radar)
-plot(radar)
-color_hist = hist(radar_mat)
+#library(spatial)
+#library(glcm)
 
 
 # Functions ----
@@ -51,17 +45,9 @@ extractFeatures = function(tif_path) {
   
   features = c()
   
-  # FEATURE 1 ----
-  # CLASSIFICATION: ice or not
-  if (df$depth[df$tif == tif_path] == -32768) {
-    features[1] = "no"
-  } else {
-    features[1] = "yes"
-  }
-  
-  # FEATURE 1 AGAIN ----
+  # FEATURE 1 FOR REGRESSION ----
   # REGRESSION: shallow ice depth
-  #features[1] = df$depth[df$tif == tif_path]
+  features[1] = df$depth[df$tif == tif_path]
   
   # FEATURE 2 ----
   # mean of intensity of radargram
@@ -82,7 +68,7 @@ extractFeatures = function(tif_path) {
   features = append(features, color_hist$density) # density instead of counts
   
   # FEATURE 6:
-    
+  
   return(features)
 }
 
@@ -96,19 +82,12 @@ sampleTIF = function(n) {
   #sample_indices = sample(num, n)
   #sampled = df[sample_indices,]
   
-  # CLASSIFICATION ----
-  # Include radargrams with width > 3000
-  df3000 = df[df$width > 3000,]
+  # REGRESSION ----
+  # Exclude areas with no shallow ice 
+  df3000 = df[df$width > 3000 & df$depth != -32768,]
   num = nrow(df3000)
   sample_indices = sample(num, n)
   sampled = df3000[sample_indices,]
-  
-  # REGRESSION ----
-  # Exclude areas with no shallow ice 
-  #df3000 = df[df$width > 3000 & df$depth != -32768,]
-  #num = nrow(df3000)
-  #sample_indices = sample(num, n)
-  #sampled = df3000[sample_indices,]
   
   return(sampled)
 }
@@ -129,16 +108,6 @@ feature_names = c("ice", "mean", "sd", "skew", paste0("color_hist", 1:25))
 colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 
-# convert to numeric (need to remove factors)
-# NOTE: DO NOT NEED TO DO THIS IF USING ALL NUMERIC FEATURES
-for (name in feature_names) {
-  if (name == "ice") {
-    next
-  }
-  print(name)
-  big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
-}
-
 
 # Random Forest ----
 #big_rf = randomForest(ice ~ ., data=big, importance=TRUE, proximity=TRUE)
@@ -146,23 +115,3 @@ big_rf = randomForest(x=big[half1,2:29], y=big[half1,1], xtest=big[half2,2:29], 
                       importance=TRUE, proximity=TRUE)
 print(big_rf)
 round(importance(big_rf), 2)
-
-
-
-
-
-# Timing ----
-start.time <- Sys.time()
-extractFeatures("Radar_Images/tiff/s_0166xx/s_01669502_tiff.tif")
-end.time <- Sys.time()
-time.taken <- end.time - start.time
-time.taken
-
-
-
-
-# TODO fix all the missing values somehow
-model = lm(depth ~ mean + sd + skew, sample)
-
-
-extractFeatures("Radar_Images/tiff/s_0025xx/s_00258001_tiff.tif")
