@@ -6,12 +6,32 @@ set.seed(23*3)
 library(raster)
 library(e1071)
 library(randomForest)
-#library(corrgram)
 #library(spatial)
-#library(glcm)
+library(glcm)
+library(RTextureMetrics)
 
 
 # Functions ----
+sampleTIF = function(n) {
+  # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
+  
+  # NORMAL ----
+  # Sample from all radargrams
+  #num = nrow(df)
+  #sample_indices = sample(num, n)
+  #sampled = df[sample_indices,]
+  
+  # CLASSIFICATION ----
+  # Include radargrams with width > 3000
+  df3000 = df[df$width > 3000,]
+  num = nrow(df3000)
+  sample_indices = sample(num, n)
+  sampled = df3000[sample_indices,]
+  
+  return(sampled)
+}
+
+
 skewness2 = function(radar_mat) {
   # Given an image matrix, returns third color moment
   # NOTE: doesn't work sometimes because it exceeds color capacity
@@ -40,8 +60,11 @@ extractFeatures = function(tif_path) {
   # Given file path to a .tif file, return a list of features
   print(tif_path)
   radar = raster(tif_path)
-  radar_mat = as.matrix(radar)
-  radar_mat = radar_mat[,relevantColumns(ncol(radar_mat), 3000)]
+  relevant = relevantColumns(ncol(radar), 3000)
+  e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
+  radar_crop = crop(radar, e)
+  radar_mat = as.matrix(radar_crop)
+  
   
   features = c()
   
@@ -67,33 +90,20 @@ extractFeatures = function(tif_path) {
   #features[4] = skewness2(radar_mat)
   
   # FEATURE 5 ----
+  # kurtosis of intensity of radargram
+  features[5] = kurtosis(radar_mat)
+  
+  # FEATURE 6 ----
   # color histogram
   color_hist = hist(radar_mat, breaks = seq(0, 255, l = 26))
   features = append(features, color_hist$density) # density instead of counts
   
-  # FEATURE 6:
+  # FEATURE 7 ----
+  # gray level co-occurrence matrix
+  radar_smol = aggregate(radar_crop, fact=16)
+  glcm(radar_smol)
     
   return(features)
-}
-
-
-sampleTIF = function(n) {
-  # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
-  
-  # NORMAL ----
-  # Sample from all radargrams
-  #num = nrow(df)
-  #sample_indices = sample(num, n)
-  #sampled = df[sample_indices,]
-  
-  # CLASSIFICATION ----
-  # Include radargrams with width > 3000
-  df3000 = df[df$width > 3000,]
-  num = nrow(df3000)
-  sample_indices = sample(num, n)
-  sampled = df3000[sample_indices,]
-  
-  return(sampled)
 }
 
 
@@ -108,12 +118,12 @@ features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
 
 # rename features
-feature_names = c("ice", "mean", "sd", "skew", paste0("color_hist", 1:25))
+feature_names = c("ice", "mean", "sd", "skew", "kurtosis", paste0("color_hist", 1:25))
 colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 
 # convert to numeric (need to remove factors)
-# NOTE: DO NOT NEED TO DO THIS IF USING ALL NUMERIC FEAfeaTURES
+# NOTE: DO NOT NEED TO DO THIS IF USING ALL NUMERIC FEATURES
 for (name in feature_names) {
   if (name == "ice") {
     next
@@ -134,24 +144,25 @@ round(importance(big_rf), 2)
 
 
 
-# Timing ----
-start.time <- Sys.time()
-#extractFeatures("Radar_Images/tiff/s_0166xx/s_01669502_tiff.tif")
-glcm(radar)
-end.time <- Sys.time()
-time.taken <- end.time - start.time
-time.taken
-
-start.time <- Sys.time()
-#extractFeatures("Radar_Images/tiff/s_0166xx/s_01669502_tiff.tif")
-glcm(radar_mat)
-end.time <- Sys.time()
-time.taken <- end.time - start.time
-time.taken
-
-
 # Testing ----
-radar = raster("Radar_Images/tiff/s_0025xx/s_00258001_tiff.tif")
+start.time <- Sys.time()
+###
+# load
+radar = raster("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
+# crop by selecting middle 3000
+relevant = relevantColumns(ncol(radar), 3000)
+e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
+radar_crop = crop(radar, e)
+# shrink the resolution by x20
+radar_smol = aggregate(radar_crop, fact=20)
+gray = glcm(radar_smol)
+###
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+time.taken
+
+
+# random stuff
 radar_mat = as.matrix(radar)
 plot(radar)
 color_hist = hist(radar_mat)
@@ -161,4 +172,4 @@ color_hist = hist(radar_mat)
 model = lm(depth ~ mean + sd + skew, sample)
 
 
-extractFeatures("Radar_Images/tiff/s_0025xx/s_00258001_tiff.tif")
+extractFeatures("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
