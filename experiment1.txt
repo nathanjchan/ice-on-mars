@@ -1,3 +1,6 @@
+Notes:
+- Sample size = 500
+
 > print(big_rf)
 
 Call:
