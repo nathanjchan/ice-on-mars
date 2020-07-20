@@ -8,7 +8,6 @@ library(e1071)
 library(randomForest)
 #library(spatial)
 library(glcm)
-library(RTextureMetrics)
 
 
 # Functions ----
@@ -27,6 +26,13 @@ sampleTIF = function(n) {
   num = nrow(df3000)
   sample_indices = sample(num, n)
   sampled = df3000[sample_indices,]
+  
+  # REGRESSION ----
+  # Exclude areas with no shallow ice 
+  #df3000 = df[df$width > 3000 & df$depth != -32768,]
+  #num = nrow(df3000)
+  #sample_indices = sample(num, n)
+  #sampled = df3000[sample_indices,]
   
   return(sampled)
 }
@@ -56,53 +62,72 @@ relevantColumns = function(ncol, nwant) {
 }
 
 
+getStatistics = function(radar_mat) {
+  # Given a matrix, calculate mean, standard deviation, skewness, and kurtosis
+  # and return them in a list
+  features = c()
+  features[1] = mean(radar_mat, na.rm=TRUE)
+  features[2] = sd(radar_mat, na.rm=TRUE)
+  features[3] = skewness(radar_mat, na.rm=TRUE)
+  features[4] = kurtosis(radar_mat, na.rm=TRUE)
+  return(features)
+}
+
+
 extractFeatures = function(tif_path) {
   # Given file path to a .tif file, return a list of features
   print(tif_path)
+  start.time <- Sys.time()
   radar = raster(tif_path)
   relevant = relevantColumns(ncol(radar), 3000)
   e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
-  
+  radar_smol = aggregate(radar_crop, fact=2)
   
   features = c()
   
-  # FEATURE 1 FOR CLASSIFICATION ----
-  # CLASSIFICATION: ice or not
+  # CLASSIFICATION ----
+  # ice or not
   if (df$depth[df$tif == tif_path] == -32768) {
     features[1] = "no"
   } else {
     features[1] = "yes"
   }
   
-  # FEATURE 2 ----
-  # mean of intensity of radargram
-  features[2] = mean(radar_mat)
+  # REGRESSION ----
+  # shallow ice depth
+  #features[1] = df$depth[df$tif == tif_path]
   
-  # FEATURE 3 ----
-  # standard deviation of intensity of radargram
-  features[3] = sd(radar_mat)
+  # STATISTICS ----
+  features = append(features, getStatistics(radar_mat))
   
-  # FEATURE 4 ----
-  # skewness of intensity of radargram
-  features[4] = skewness(radar_mat)
-  #features[4] = skewness2(radar_mat)
-  
-  # FEATURE 5 ----
-  # kurtosis of intensity of radargram
-  features[5] = kurtosis(radar_mat)
-  
-  # FEATURE 6 ----
-  # color histogram
+  # COLOR HISTOGRAM ----
   color_hist = hist(radar_mat, breaks = seq(0, 255, l = 26))
   features = append(features, color_hist$density) # density instead of counts
   
-  # FEATURE 7 ----
-  # gray level co-occurrence matrix
-  radar_smol = aggregate(radar_crop, fact=16)
-  glcm(radar_smol)
-    
+  # GRAY LEVEL CO-OCCURRANCE MATRIX ----
+  gray = glcm(radar_smol)
+  correlation = sapply(as.matrix(gray$glcm_correlation), function(x) {
+    if (is.infinite(x)) {
+      x = NA
+    }
+    return(x)
+  })
+  
+  stats = c(getStatistics(as.matrix(gray$glcm_mean)),
+            getStatistics(as.matrix(gray$glcm_variance)),
+            getStatistics(as.matrix(gray$glcm_homogeneity)),
+            getStatistics(as.matrix(gray$glcm_contrast)),
+            getStatistics(as.matrix(gray$glcm_dissimilarity)),
+            getStatistics(as.matrix(gray$glcm_entropy)),
+            getStatistics(as.matrix(gray$glcm_second_moment)),
+            getStatistics(correlation)
+            )
+  features = append(features, stats)
+  end.time <- Sys.time()
+  time.taken <- end.time - start.time
+  print(time.taken)
   return(features)
 }
 
@@ -118,24 +143,33 @@ features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
 
 # rename features
-feature_names = c("ice", "mean", "sd", "skew", "kurtosis", paste0("color_hist", 1:25))
+feature_names = c("ice", "mean", "sd", "skew", "kurtosis", paste0("color_hist", 1:25),
+                  paste0("glcm_mean", 1:4), paste0("glcm_variance", 1:4), paste0("glcm_homogeneity", 1:4),
+                  paste0("glcm_contrast", 1:4), paste0("glcm_dissimilarity", 1:4), paste0("glcm_entropy", 1:4),
+                  paste0("glcm_second_moment", 1:4), paste0("glcm_correlation", 1:4))
+num_features = length(feature_names)
+if (num_features != ncol(features_df)) {
+  stop("Number of feature names and number of features don't match!")
+}
 colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 
-# convert to numeric (need to remove factors)
-# NOTE: DO NOT NEED TO DO THIS IF USING ALL NUMERIC FEATURES
+# convert to numeric
+# NOTE: REMOVE WHEN DOING REGRESSION
 for (name in feature_names) {
   if (name == "ice") {
+    big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
     next
   }
   print(name)
-  big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
+  #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
+  big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
 }
 
 
 # Random Forest ----
 #big_rf = randomForest(ice ~ ., data=big, importance=TRUE, proximity=TRUE)
-big_rf = randomForest(x=big[half1,2:29], y=big[half1,1], xtest=big[half2,2:29], ytest=big[half2,1],
+big_rf = randomForest(x=big[half1,2:num_features], y=big[half1,1], xtest=big[half2,2:num_features], ytest=big[half2,1],
                       importance=TRUE, proximity=TRUE)
 print(big_rf)
 round(importance(big_rf), 2)
@@ -160,6 +194,7 @@ gray = glcm(radar_smol)
 end.time <- Sys.time()
 time.taken <- end.time - start.time
 time.taken
+
 
 
 # random stuff
