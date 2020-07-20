@@ -1,0 +1,86 @@
+Notes:
+- Sample size = 500
+- About 8 hours to run
+- Reduced size of radargram by 2x for GLCM
+
+print(big_rf)
+
+Call
+ randomForest(x = big[half1, 2num_features], y = big[half1, 1],      xtest = big[half2, 2num_features], ytest = big[half2, 1],      importance = TRUE, proximity = TRUE) 
+               Type of random forest classification
+                     Number of trees 500
+No. of variables tried at each split 7
+
+        OOB estimate of  error rate 13.2%
+Confusion matrix
+    no yes class.error
+no  82  21  0.20388350
+yes 12 135  0.08163265
+                Test set error rate 12.8%
+Confusion matrix
+    no yes class.error
+no  98  18   0.1551724
+yes 14 120   0.1044776
+ round(importance(big_rf), 2)
+                       no   yes MeanDecreaseAccuracy MeanDecreaseGini
+mean                 1.55  2.98                 3.84             0.74
+sd                   0.64  4.65                 4.76             1.06
+skew                 3.46  3.19                 4.67             0.80
+kurtosis             2.67  6.64                 6.69             1.53
+color_hist1          2.16  2.51                 3.58             0.84
+color_hist2          2.20  2.34                 3.15             0.70
+color_hist3          0.25  3.55                 3.19             0.68
+color_hist4         -0.14  3.79                 2.72             0.89
+color_hist5          2.87  1.02                 2.76             1.01
+color_hist6          2.23  1.96                 3.26             1.00
+color_hist7          2.20  4.82                 5.14             1.08
+color_hist8          3.72  6.62                 7.95             2.13
+color_hist9          6.43 10.06                11.46             5.23
+color_hist10         5.93  8.82                11.04             4.17
+color_hist11         7.19  7.71                10.02             3.68
+color_hist12         3.70  6.25                 7.44             2.28
+color_hist13         3.46  3.06                 4.82             1.45
+color_hist14         5.18  1.83                 5.26             1.08
+color_hist15         4.67  3.61                 5.63             0.88
+color_hist16         6.07  1.54                 6.38             0.95
+color_hist17         4.09  2.15                 4.51             0.90
+color_hist18         3.49  1.60                 4.39             0.58
+color_hist19         2.36  2.86                 3.80             0.53
+color_hist20         1.66  3.53                 3.40             0.53
+color_hist21         0.45  3.62                 3.15             0.55
+color_hist22         0.65  2.17                 2.18             0.62
+color_hist23         1.26  3.50                 3.88             0.63
+color_hist24        -1.17  3.66                 2.77             0.63
+color_hist25         1.27  3.65                 3.66             0.80
+glcm_mean1           3.55  4.43                 5.56             0.88
+glcm_mean2           1.31  5.24                 5.36             0.92
+glcm_mean3          11.37 14.21                15.70             9.40
+glcm_mean4           9.83 12.18                14.37             6.63
+glcm_variance1       2.62  4.80                 5.53             1.05
+glcm_variance2       2.92  4.75                 5.38             0.69
+glcm_variance3       7.29  8.22                10.50             4.50
+glcm_variance4       7.50  5.80                 8.70             3.69
+glcm_homogeneity1    3.94  6.15                 7.61             1.51
+glcm_homogeneity2    3.05  2.38                 3.88             1.93
+glcm_homogeneity3    6.00  9.11                 9.99             2.62
+glcm_homogeneity4    4.11  1.01                 3.77             1.03
+glcm_contrast1       3.24  5.73                 7.02             1.49
+glcm_contrast2       2.63  6.48                 6.82             1.48
+glcm_contrast3       4.69  6.16                 7.14             1.85
+glcm_contrast4       5.65  6.85                 7.97             2.18
+glcm_dissimilarity1  5.04  5.45                 7.14             1.94
+glcm_dissimilarity2  1.89  6.07                 6.14             1.26
+glcm_dissimilarity3  3.90  3.38                 5.41             1.07
+glcm_dissimilarity4  3.97  4.92                 6.22             1.29
+glcm_entropy1        8.03  8.12                10.65             4.07
+glcm_entropy2        9.97  9.75                12.75             5.99
+glcm_entropy3        5.07  6.15                 7.70             2.12
+glcm_entropy4        5.09  6.61                 7.94             1.96
+glcm_second_moment1  8.45  9.27                11.42             5.00
+glcm_second_moment2 10.03  9.25                11.91             6.25
+glcm_second_moment3  0.38  3.85                 3.53             0.72
+glcm_second_moment4  1.52  1.11                 1.87             0.77
+glcm_correlation1   10.49 10.03                12.52             5.04
+glcm_correlation2    3.80  0.22                 2.84             1.84
+glcm_correlation3    2.27  0.86                 2.54             0.81
+glcm_correlation4    0.80  1.16                 1.51             0.60
