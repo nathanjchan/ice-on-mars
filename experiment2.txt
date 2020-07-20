@@ -1,5 +1,6 @@
-Notes:
+REGRESSION
 - Sample size = 500
+- Not sure how to interpret this information yet
 
 > print(big_rf)
 

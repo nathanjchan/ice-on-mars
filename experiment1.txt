@@ -1,5 +1,6 @@
-Notes:
+CLASSIFICATION
 - Sample size = 500
+- 16% error
 
 > print(big_rf)
 
