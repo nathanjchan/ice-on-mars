@@ -1,6 +1,6 @@
 CLASSIFICATION
-- Sample size = 500
-- 16% error
+- Sample size: 500
+- Error rate: 15%
 
 > print(big_rf)
 

@@ -1,8 +1,8 @@
 CLASSIFICATION
-- Sample size = 500
+- Sample size: 500
+- Error rate: 13%
 - About 8 hours to run
 - Reduced size of radargram by 2x for GLCM
-- 13% error
 
 print(big_rf)
 

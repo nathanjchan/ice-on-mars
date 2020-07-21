@@ -1,5 +1,7 @@
 REGRESSION
-- Sample size = 500
+- Sample size: 500
+- MSE: 0.03
+- Variance explained: 38%
 - Not sure how to interpret this information yet
 
 > print(big_rf)
