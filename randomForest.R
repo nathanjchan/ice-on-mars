@@ -1,6 +1,7 @@
 # Set Up ----
 df = read.csv("radar.csv", stringsAsFactors = FALSE)
 df = df[, !(colnames(df) %in% "X")]
+df = df[df$tif != "Radar_Images/tiff/s_0240xx/s_02407601_tiff.tif",]
 set.seed(23*3)
 
 library(raster)
@@ -11,6 +12,7 @@ library(glcm)
 
 
 # Functions ----
+# CHANGE FOR REGRESSION
 sampleTIF = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
@@ -74,16 +76,46 @@ getStatistics = function(radar_mat) {
 }
 
 
+replaceInf = function(x) {
+  # Given an object, if it is infinite, turn it into NA
+  if (is.infinite(x)) {
+    x = NA
+  }
+  return(x)
+}
+
+
+getGLCM = function(radar_smol) {
+  # Given a radargram, calculate the GLCM and return the feature statistics
+  gray = glcm(radar_smol)
+  correlation = sapply(as.matrix(gray$glcm_correlation), replaceInf)
+  stats = c(getStatistics(as.matrix(gray$glcm_mean)),
+            getStatistics(as.matrix(gray$glcm_variance)),
+            getStatistics(as.matrix(gray$glcm_homogeneity)),
+            getStatistics(as.matrix(gray$glcm_contrast)),
+            getStatistics(as.matrix(gray$glcm_dissimilarity)),
+            getStatistics(as.matrix(gray$glcm_entropy)),
+            getStatistics(as.matrix(gray$glcm_second_moment)),
+            getStatistics(correlation)
+  )
+  return(stats)
+}
+
+
+# CHANGE FOR REGRESSION
 extractFeatures = function(tif_path) {
   # Given file path to a .tif file, return a list of features
   print(tif_path)
-  start.time <- Sys.time()
+  start_time = Sys.time()
   radar = raster(tif_path)
   relevant = relevantColumns(ncol(radar), 3000)
   e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
+  
+  # CHANGE RESOLUTION
   radar_smol = aggregate(radar_crop, fact=2)
+  radar_smol2 = aggregate(radar_crop, fact=200)
   
   features = c()
   
@@ -102,38 +134,40 @@ extractFeatures = function(tif_path) {
   # STATISTICS ----
   features = append(features, getStatistics(radar_mat))
   
+  
+  # GRAY LEVEL CO-OCCURRANCE MATRIX ----
+  stats = getGLCM(radar_smol)
+  stats2 = getGLCM(radar_smol2)
+  features = append(features, stats)
+  features = append(features, stats2)
+  
   # COLOR HISTOGRAM ----
   color_hist = hist(radar_mat, breaks = seq(0, 255, l = 26))
   features = append(features, color_hist$density) # density instead of counts
   
-  # GRAY LEVEL CO-OCCURRANCE MATRIX ----
-  gray = glcm(radar_smol)
-  correlation = sapply(as.matrix(gray$glcm_correlation), function(x) {
-    if (is.infinite(x)) {
-      x = NA
-    }
-    return(x)
-  })
+  color_hist2 = hist(radar_mat, breaks = seq(0, 255, l = 26))
+  features = append(features, color_hist2$density) # density instead of counts
   
-  stats = c(getStatistics(as.matrix(gray$glcm_mean)),
-            getStatistics(as.matrix(gray$glcm_variance)),
-            getStatistics(as.matrix(gray$glcm_homogeneity)),
-            getStatistics(as.matrix(gray$glcm_contrast)),
-            getStatistics(as.matrix(gray$glcm_dissimilarity)),
-            getStatistics(as.matrix(gray$glcm_entropy)),
-            getStatistics(as.matrix(gray$glcm_second_moment)),
-            getStatistics(correlation)
-            )
-  features = append(features, stats)
-  end.time <- Sys.time()
-  time.taken <- end.time - start.time
-  print(time.taken)
+  color_hist3 = hist(radar_mat, breaks = seq(0, 255, l = 26))
+  features = append(features, color_hist3$density) # density instead of counts
+  
+  # END ----
+  end_time = Sys.time()
+  time_taken = end_time - start_time
+  total_time_taken = end_time - global_start_time
+  global_i <<- global_i + 1
+  print(time_taken)
+  print(total_time_taken)
+  print(paste0(global_i, "/", global_n))
   return(features)
 }
 
 
 # Sample data frame ----
 n = 500
+global_i = 0
+global_n = n
+global_start_time = Sys.time()
 sample = sampleTIF(n)
 half1 = 1:(n/2)
 half2 = (n/2 + 1):n
@@ -143,10 +177,26 @@ features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
 
 # rename features
-feature_names = c("ice", "mean", "sd", "skew", "kurtosis", paste0("color_hist", 1:25),
-                  paste0("glcm_mean", 1:4), paste0("glcm_variance", 1:4), paste0("glcm_homogeneity", 1:4),
-                  paste0("glcm_contrast", 1:4), paste0("glcm_dissimilarity", 1:4), paste0("glcm_entropy", 1:4),
-                  paste0("glcm_second_moment", 1:4), paste0("glcm_correlation", 1:4))
+feature_names = c("ice", "mean", "sd", "skew", "kurtosis",
+                  paste0("glcm_mean", 1:4),
+                  paste0("glcm_variance", 1:4),
+                  paste0("glcm_homogeneity", 1:4),
+                  paste0("glcm_contrast", 1:4),
+                  paste0("glcm_dissimilarity", 1:4),
+                  paste0("glcm_entropy", 1:4),
+                  paste0("glcm_second_moment", 1:4),
+                  paste0("glcm_correlation", 1:4),
+                  paste0("glcm_mean2", 1:4),
+                  paste0("glcm_variance2", 1:4),
+                  paste0("glcm_homogeneity2", 1:4),
+                  paste0("glcm_contrast2", 1:4),
+                  paste0("glcm_dissimilarity2", 1:4),
+                  paste0("glcm_entropy2", 1:4),
+                  paste0("glcm_second_moment2", 1:4),
+                  paste0("glcm_correlation2", 1:4),
+                  paste0("color_hist", 1:25),
+                  paste0("color_hist2", 1:25),
+                  paste0("color_hist3", 1:25))
 num_features = length(feature_names)
 if (num_features != ncol(features_df)) {
   stop("Number of feature names and number of features don't match!")
@@ -181,15 +231,15 @@ round(importance(big_rf), 2)
 # Testing ----
 start.time <- Sys.time()
 ###
-# load
 radar = raster("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
 # crop by selecting middle 3000
 relevant = relevantColumns(ncol(radar), 3000)
 e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
 # shrink the resolution by x20
-radar_smol = aggregate(radar_crop, fact=20)
+radar_smol = aggregate(radar_crop, fact=100)
 gray = glcm(radar_smol)
+plot(gray)
 ###
 end.time <- Sys.time()
 time.taken <- end.time - start.time
@@ -201,10 +251,6 @@ time.taken
 radar_mat = as.matrix(radar)
 plot(radar)
 color_hist = hist(radar_mat)
-
-
-# TODO fix all the missing values somehow
-model = lm(depth ~ mean + sd + skew, sample)
 
 
 extractFeatures("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
