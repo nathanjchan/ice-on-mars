@@ -9,6 +9,9 @@ library(e1071)
 library(randomForest)
 #library(spatial)
 library(glcm)
+#library(reticulate)
+# use_python("C:/Users/natha/anaconda3/python.exe")
+#import("keras")
 
 
 # Functions ----
@@ -194,9 +197,9 @@ feature_names = c("ice", "mean", "sd", "skew", "kurtosis",
                   paste0("glcm_entropy2", 1:4),
                   paste0("glcm_second_moment2", 1:4),
                   paste0("glcm_correlation2", 1:4),
-                  paste0("color_hist", 1:25),
-                  paste0("color_hist2", 1:25),
-                  paste0("color_hist3", 1:25))
+                  paste0("color_hist_one", 1:25),
+                  paste0("color_hist_two", 1:25),
+                  paste0("color_hist_three", 1:25))
 num_features = length(feature_names)
 if (num_features != ncol(features_df)) {
   stop("Number of feature names and number of features don't match!")
@@ -215,14 +218,23 @@ for (name in feature_names) {
   #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
   big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
 }
+write.csv(big, "big.csv")
+
+
 
 
 # Random Forest ----
 #big_rf = randomForest(ice ~ ., data=big, importance=TRUE, proximity=TRUE)
-big_rf = randomForest(x=big[half1,2:num_features], y=big[half1,1], xtest=big[half2,2:num_features], ytest=big[half2,1],
-                      importance=TRUE, proximity=TRUE)
+
+x_train = big[half1,2:num_features]
+y_train = big[half1,1]
+x_test = big[half2,2:num_features]
+y_test = big[half2,1]
+
+big_rf = randomForest(x=x_train, y=y_train, xtest=x_test, ytest=y_test, importance=TRUE, proximity=TRUE)
 print(big_rf)
 round(importance(big_rf), 2)
+
 
 
 
