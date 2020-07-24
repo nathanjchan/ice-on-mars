@@ -1,0 +1,158 @@
+Notes:
+- Classification
+- Sample size: 500
+- Test error: 10%
+- Took about 2 hours and 15 minutes with 12 cores parallel processing
+    - Without the worry for time, this opens up many more opportunities for possible computations
+- Best experiment so far
+- Features included 4 color statistics, color histogram, and 4 statistics for 3 varations of the 8 GLCM features (96 total)
+- GLCM features calculated 3 times:
+    1. 2x smaller resolution with 3x3 sliding window
+    2. 200x smaller resolution with 3x3 sliding window
+    3. 2x smaller resolution with 9x9 sliding window
+
+> print(big_rf)
+
+Call:
+ randomForest(x = x_train, y = y_train, xtest = x_test, ytest = y_test,      importance = TRUE, proximity = TRUE) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 11
+
+        OOB estimate of  error rate: 10.8%
+Confusion matrix:
+     no yes class.error
+no  103  12   0.1043478
+yes  15 120   0.1111111
+                Test set error rate: 10%
+Confusion matrix:
+     no yes class.error
+no  111  13   0.1048387
+yes  12 114   0.0952381
+> round(importance(big_rf), 2)
+                no   yes MeanDecreaseAccuracy MeanDecreaseGini
+mean          1.63  3.37                 3.91             0.52
+sd            2.99  1.22                 2.27             0.53
+skew          3.39  3.63                 4.89             0.51
+kurt          0.69  3.18                 2.92             0.43
+color_hist1   2.82  3.03                 3.74             0.35
+color_hist2   1.26  3.17                 3.17             0.61
+color_hist3   1.57  2.63                 3.40             0.38
+color_hist4   0.21  1.06                 1.00             0.34
+color_hist5   3.52  3.77                 4.64             0.88
+color_hist6   3.04  2.66                 3.94             0.73
+color_hist7   2.12  3.01                 3.32             0.52
+color_hist8   2.72  2.64                 3.33             0.54
+color_hist9   3.02  4.11                 5.22             1.70
+color_hist10  2.92  4.05                 4.50             1.17
+color_hist11  1.94  3.08                 3.80             0.80
+color_hist12 -0.05  3.64                 3.09             0.58
+color_hist13  2.69  1.48                 3.16             0.31
+color_hist14  3.70  3.21                 4.16             0.52
+color_hist15  3.35  3.40                 4.52             0.90
+color_hist16  3.99  3.52                 4.84             0.73
+color_hist17  2.95  2.04                 3.36             0.71
+color_hist18  3.68  2.70                 4.16             0.59
+color_hist19  3.49  2.37                 3.74             0.57
+color_hist20  1.77  0.18                 1.37             0.28
+color_hist21  2.34  1.01                 2.70             0.28
+color_hist22  2.11  0.91                 2.01             0.39
+color_hist23  0.83  2.12                 2.41             0.31
+color_hist24  3.20  1.31                 2.88             0.39
+color_hist25  2.67  2.81                 3.61             0.25
+glcm1         1.80  3.11                 3.78             0.43
+glcm2         3.05  2.59                 3.84             0.60
+glcm3         8.10  8.53                10.05             4.86
+glcm4         6.66  7.26                 8.59             3.60
+glcm5         1.38  2.53                 3.17             0.22
+glcm6         1.86  1.87                 3.32             0.46
+glcm7         4.62  3.08                 5.32             1.61
+glcm8         4.85  3.59                 5.94             1.18
+glcm9         2.00  3.20                 3.88             0.29
+glcm10        3.47  5.12                 5.76             1.19
+glcm11        2.86  5.01                 5.04             0.85
+glcm12        1.76  3.50                 3.82             0.50
+glcm13        1.97  2.73                 3.19             0.36
+glcm14        3.15  5.30                 5.48             0.94
+glcm15        3.54  3.54                 4.62             1.06
+glcm16        2.51  4.44                 4.67             1.13
+glcm17        2.92  3.59                 4.71             0.39
+glcm18       -0.22  2.92                 2.49             0.49
+glcm19        3.97  3.57                 5.41             0.85
+glcm20        2.98  0.70                 3.01             0.53
+glcm21        5.42  5.46                 6.79             2.05
+glcm22        6.47  6.10                 7.52             2.91
+glcm23        4.25  5.37                 6.08             1.63
+glcm24        4.65  5.80                 6.43             1.46
+glcm25        5.74  3.86                 6.01             1.81
+glcm26        6.59  7.11                 7.90             3.52
+glcm27        2.30  4.08                 4.55             0.54
+glcm28        1.07  3.07                 2.69             0.49
+glcm29       10.94  8.51                11.43             4.87
+glcm30        1.53  2.00                 2.39             0.55
+glcm31        1.20  1.40                 1.92             0.39
+glcm32       -0.26  1.02                 0.62             0.26
+glcm33        1.86 -0.52                 1.28             0.35
+glcm34        3.18  1.84                 3.29             0.51
+glcm35       -0.08  1.84                 1.40             0.53
+glcm36        0.21  1.05                 0.84             0.46
+glcm37        0.00  0.22                -0.05             0.30
+glcm38        1.71  0.30                 1.46             0.44
+glcm39        2.56 -0.76                 1.34             0.43
+glcm40        1.66  0.39                 1.64             0.37
+glcm41        0.34  0.74                 0.66             0.34
+glcm42       -0.28  1.56                 0.95             0.52
+glcm43        1.61  1.24                 2.36             0.47
+glcm44        4.61  3.57                 4.98             1.23
+glcm45        2.09  1.58                 2.78             0.68
+glcm46        0.43  1.79                 1.81             0.51
+glcm47       -1.02  1.65                 0.79             0.35
+glcm48       -0.27 -0.04                -0.23             0.39
+glcm49        1.85  1.69                 2.46             0.55
+glcm50        0.63  1.10                 1.16             0.74
+glcm51        5.46  0.86                 5.81             1.28
+glcm52        2.91  1.48                 3.26             0.53
+glcm53       -1.99  0.01                -1.20             0.33
+glcm54        0.35  1.13                 1.03             0.35
+glcm55       -0.99  1.27                 0.37             0.32
+glcm56       -0.02  3.44                 2.26             0.27
+glcm57        0.17  2.03                 1.71             0.31
+glcm58        1.83  2.28                 2.81             0.37
+glcm59        1.30  1.70                 2.32             0.42
+glcm60       -0.01  3.24                 2.33             0.54
+glcm61        0.96  2.53                 2.31             0.29
+glcm62        0.35 -0.34                -0.01             0.22
+glcm63        0.02  2.11                 1.69             0.28
+glcm64        0.18  2.50                 2.28             0.31
+glcm65        3.12  2.96                 4.41             0.38
+glcm66        1.65  1.87                 2.99             0.41
+glcm67        5.71  7.12                 8.06             3.18
+glcm68        7.48  6.74                 8.42             3.16
+glcm69        2.28  2.03                 2.67             0.40
+glcm70        0.66  1.68                 2.33             0.29
+glcm71        8.89  7.66                 9.74             5.13
+glcm72        6.35  6.40                 8.01             3.72
+glcm73        1.41  3.56                 3.88             0.40
+glcm74        2.79  3.14                 3.99             0.83
+glcm75        0.26  1.11                 1.05             0.43
+glcm76        3.16  1.85                 3.77             0.49
+glcm77        2.24  3.72                 4.56             0.56
+glcm78        1.74  4.30                 4.36             0.73
+glcm79        5.67  7.18                 8.05             2.77
+glcm80        3.70  5.83                 6.49             1.94
+glcm81        1.29  2.58                 2.94             0.43
+glcm82        2.88  2.36                 3.86             0.61
+glcm83        5.99  3.69                 6.41             2.20
+glcm84        6.56  7.65                 9.04             3.77
+glcm85        4.49  5.05                 5.76             1.28
+glcm86        3.95  3.14                 4.52             0.67
+glcm87        0.61  2.82                 2.09             0.35
+glcm88        4.50  6.58                 7.74             1.60
+glcm89        5.03  5.36                 6.91             1.28
+glcm90        5.80  5.77                 6.78             2.28
+glcm91        2.46  1.09                 2.76             0.48
+glcm92        5.21  8.00                 9.29             2.40
+glcm93       12.31 10.26                12.33             6.23
+glcm94        0.38  4.93                 4.86             0.55
+glcm95        2.72  0.87                 3.01             0.41
+glcm96        1.67  2.72                 3.54             0.48
