@@ -179,6 +179,14 @@ extractIceClassification = function(tif_path) {
 
 
 
+extractIceRegression = function(tif_path) {
+  # REGRESSION
+  # shallow ice depth
+  ice_depth = df$depth[df$tif == tif_path]
+  return(ice_depth)
+}
+
+
 
 
 
@@ -206,11 +214,14 @@ clusterEvalQ(cl, {
 features = parLapply(cl, sample$tif, extractFeatures)
 stopCluster(cl)
 
-
-ice = lapply(sample$tif, extractIceClassification)
 #features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
 features_df = features_df[, !(colnames(features_df) %in% "V1")]
+
+
+
+#ice = lapply(sample$tif, extractIceClassification)
+ice = lapply(sample$tif, extractIceRegression)
 ice_df = as.data.frame(do.call(rbind, ice))
 features_df = cbind(ice_df, features_df)
 
@@ -223,20 +234,20 @@ if (num_features != ncol(features_df)) {
 }
 colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
-write.csv(big, "big.csv")
+#write.csv(big, "big.csv")
 
 # convert to numeric
-# NOTE: REMOVE WHEN DOING REGRESSION
 for (name in feature_names) {
   if (name == "ice") {
-    big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
+    # REMOVE THIS LINE IF ICE COLUMN IS NUMERIC
+    #big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
     next
   }
   print(name)
   #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
   big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
 }
-write.csv(big, "big.csv")
+#write.csv(big, "big.csv")
 
 
 
