@@ -1,0 +1,145 @@
+Notes:
+- Regression, very experimental experiment
+- Sample size: 500
+- % variance explained: 71%
+- Left -32768 in the regression, which indicates no ice, skewing the results significantly
+
+> print(big_rf)
+
+Call:
+ randomForest(x = x_train, y = y_train, xtest = x_test, ytest = y_test,      importance = TRUE, proximity = TRUE) 
+               Type of random forest: regression
+                     Number of trees: 500
+No. of variables tried at each split: 41
+
+          Mean of squared residuals: 84644216
+                    % Var explained: 68.26
+                       Test set MSE: 77446618
+                    % Var explained: 71.15
+> round(importance(big_rf), 2)
+             %IncMSE IncNodePurity
+mean            1.73      73194021
+sd              2.27      77117034
+skew            3.75     147415258
+kurt            3.88     216398593
+color_hist1     2.69      85442707
+color_hist2     4.09     166111115
+color_hist3     4.03     176117288
+color_hist4     3.02     269797698
+color_hist5     4.15     345230736
+color_hist6     3.35     131603248
+color_hist7     1.89      92980069
+color_hist8     2.32     194851416
+color_hist9     5.36     678477540
+color_hist10    4.18     326686683
+color_hist11    1.50     157572644
+color_hist12    1.22      88072934
+color_hist13    2.28     111113128
+color_hist14    1.33     248163068
+color_hist15    3.70     275146894
+color_hist16    4.03     295652458
+color_hist17    3.97     281793650
+color_hist18    3.65     237313274
+color_hist19    1.53      80698843
+color_hist20    2.24     144445759
+color_hist21    2.16      66774056
+color_hist22    2.42      68259115
+color_hist23    2.49     188207924
+color_hist24    3.71     130799701
+color_hist25    3.55     140308362
+glcm1           2.12      42097354
+glcm2           3.03     165888143
+glcm3          12.37    4413044650
+glcm4           8.23    1811785638
+glcm5           0.85      33121226
+glcm6           0.39     113258038
+glcm7           3.53     590368706
+glcm8           4.61     411871349
+glcm9           2.62      95028845
+glcm10          5.37     496892116
+glcm11          4.27     500372211
+glcm12          1.86      85357192
+glcm13          1.02      37710565
+glcm14          5.09     498490152
+glcm15          4.32     348199968
+glcm16          3.48     296355939
+glcm17          1.25      42220109
+glcm18          2.23     137755090
+glcm19          4.09     355133266
+glcm20          1.64     230877768
+glcm21          5.36    1083698952
+glcm22          7.70    2064977109
+glcm23          5.03     312872841
+glcm24          6.47     513098061
+glcm25          4.97     461988998
+glcm26          7.36    2221968830
+glcm27          6.07     416466239
+glcm28          3.47     226535450
+glcm29         12.99    3417104525
+glcm30          1.77     439432403
+glcm31         -0.36     102286389
+glcm32          0.54      65147359
+glcm33          1.19     149383098
+glcm34          2.79     123684131
+glcm35          1.11     268368279
+glcm36          0.04     362717481
+glcm37          1.33     159444543
+glcm38          1.67     125587456
+glcm39          0.82     223031092
+glcm40          1.59     120002843
+glcm41          2.63     121812596
+glcm42         -0.84     155034951
+glcm43          3.98     197385395
+glcm44          4.44     505071864
+glcm45          3.21     326154421
+glcm46          1.71     173576941
+glcm47         -0.81      74416763
+glcm48         -0.68     104021069
+glcm49          4.41     431681926
+glcm50          2.94     302919676
+glcm51          3.99     353462667
+glcm52          2.81     152539254
+glcm53          1.89     148118725
+glcm54          1.23     162015292
+glcm55         -1.68     147278819
+glcm56          1.12     254378037
+glcm57          1.33     104478747
+glcm58          0.20     135974945
+glcm59          1.33     230468229
+glcm60          4.31     275735845
+glcm61          1.01     132205707
+glcm62          0.91     164371960
+glcm63          1.31     179779892
+glcm64          1.53     272724727
+glcm65         -1.39      23719242
+glcm66          1.53      66255944
+glcm67          6.32    1061565332
+glcm68          6.67    1402130403
+glcm69          1.54      41941318
+glcm70          2.42      84956372
+glcm71         13.41    6615029590
+glcm72          8.14    2532745587
+glcm73          3.13     189277297
+glcm74          3.81     257775609
+glcm75          2.73     150383329
+glcm76          2.89     145820500
+glcm77          2.52      90541632
+glcm78          4.01     293362230
+glcm79          7.56    1657102000
+glcm80          7.50     817229407
+glcm81          2.10      85248082
+glcm82          2.89     107308581
+glcm83          4.42     462666438
+glcm84          9.52    2766891137
+glcm85          4.87     355437596
+glcm86          3.73     337168829
+glcm87          2.67      71094776
+glcm88          5.12     638410157
+glcm89          4.93     407871596
+glcm90          5.76     874637072
+glcm91          2.22     159554191
+glcm92          9.88    2394100954
+glcm93         18.02    6072672374
+glcm94          6.46     348084870
+glcm95          3.33     167366763
+glcm96          1.97     222372108
