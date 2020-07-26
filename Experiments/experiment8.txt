@@ -1,0 +1,145 @@
+Notes:
+- Regression
+- Sample size: 500
+- % variance explained: 44%
+- Took a little over 3 hours to run on 12 cores
+
+> print(big_rf)
+
+Call:
+ randomForest(x = x_train, y = y_train, xtest = x_test, ytest = y_test,      importance = TRUE, proximity = TRUE) 
+               Type of random forest: regression
+                     Number of trees: 500
+No. of variables tried at each split: 41
+
+          Mean of squared residuals: 0.03829915
+                    % Var explained: 40.93
+                       Test set MSE: 0.03
+                    % Var explained: 44.79
+> round(importance(big_rf), 2)
+             %IncMSE IncNodePurity
+mean            2.67          0.03
+sd              0.33          0.03
+skew            2.25          0.03
+kurt            2.30          0.07
+color_hist1     0.49          0.03
+color_hist2     1.88          0.04
+color_hist3     2.33          0.06
+color_hist4    -0.30          0.06
+color_hist5    -0.10          0.04
+color_hist6     1.98          0.04
+color_hist7     0.90          0.03
+color_hist8     4.48          0.09
+color_hist9     5.38          0.29
+color_hist10    2.74          0.09
+color_hist11    2.33          0.07
+color_hist12    0.53          0.03
+color_hist13   -0.27          0.02
+color_hist14    1.07          0.02
+color_hist15   -0.15          0.03
+color_hist16    1.09          0.04
+color_hist17   -0.61          0.02
+color_hist18   -0.77          0.02
+color_hist19    1.18          0.02
+color_hist20    0.76          0.02
+color_hist21   -0.77          0.02
+color_hist22    1.01          0.02
+color_hist23    1.91          0.02
+color_hist24    0.17          0.05
+color_hist25    0.97          0.05
+glcm1           1.46          0.02
+glcm2          -0.76          0.03
+glcm3          10.32          1.20
+glcm4           7.38          0.78
+glcm5           1.08          0.03
+glcm6           1.17          0.03
+glcm7           8.92          0.87
+glcm8           2.05          0.15
+glcm9           3.84          0.10
+glcm10          2.68          0.08
+glcm11          0.04          0.05
+glcm12          0.66          0.03
+glcm13          8.87          0.38
+glcm14          1.77          0.12
+glcm15          1.58          0.07
+glcm16          3.87          0.07
+glcm17          6.45          0.20
+glcm18          5.10          0.17
+glcm19          1.66          0.07
+glcm20          3.58          0.07
+glcm21         -0.14          0.05
+glcm22          0.05          0.07
+glcm23          4.13          0.12
+glcm24          2.74          0.06
+glcm25          2.13          0.06
+glcm26          1.89          0.06
+glcm27          2.97          0.08
+glcm28          0.05          0.04
+glcm29          1.04          0.07
+glcm30         -0.69          0.10
+glcm31         -0.81          0.06
+glcm32         -0.15          0.06
+glcm33          0.16          0.05
+glcm34          6.59          0.33
+glcm35          2.27          0.10
+glcm36          3.45          0.26
+glcm37          0.80          0.09
+glcm38          3.11          0.10
+glcm39          4.08          0.24
+glcm40          5.38          0.25
+glcm41          0.30          0.06
+glcm42          4.49          0.09
+glcm43         -0.99          0.05
+glcm44          0.13          0.10
+glcm45          2.64          0.06
+glcm46          0.78          0.06
+glcm47          2.10          0.11
+glcm48          1.48          0.07
+glcm49          1.38          0.19
+glcm50          2.05          0.05
+glcm51          3.78          0.16
+glcm52          2.42          0.12
+glcm53         -0.17          0.11
+glcm54          1.60          0.08
+glcm55          6.43          0.19
+glcm56          1.66          0.10
+glcm57          1.07          0.07
+glcm58          3.13          0.10
+glcm59          2.29          0.17
+glcm60          2.48          0.09
+glcm61          4.23          0.17
+glcm62          1.76          0.11
+glcm63         -0.65          0.10
+glcm64          6.14          0.18
+glcm65          1.44          0.02
+glcm66         -0.86          0.05
+glcm67          7.07          0.64
+glcm68          9.50          1.07
+glcm69          2.04          0.02
+glcm70          1.14          0.02
+glcm71          7.62          0.67
+glcm72          4.58          0.29
+glcm73          4.23          0.12
+glcm74          2.80          0.06
+glcm75          0.02          0.03
+glcm76          0.06          0.03
+glcm77          7.09          0.25
+glcm78          1.34          0.05
+glcm79          1.35          0.06
+glcm80         -0.87          0.08
+glcm81          5.99          0.21
+glcm82          4.07          0.10
+glcm83          2.75          0.07
+glcm84          3.14          0.07
+glcm85          4.28          0.08
+glcm86          2.50          0.08
+glcm87          1.98          0.06
+glcm88          4.03          0.28
+glcm89          3.34          0.06
+glcm90          4.02          0.12
+glcm91          1.04          0.04
+glcm92          2.41          0.12
+glcm93          3.45          0.12
+glcm94          1.71          0.07
+glcm95          3.18          0.04
+glcm96          2.97          0.05

@@ -1,0 +1,1607 @@
+starting worker pid=20280 on localhost:11887 at 02:30:21.770
+starting worker pid=18032 on localhost:11887 at 02:30:21.770
+starting worker pid=19496 on localhost:11887 at 02:30:21.770
+starting worker pid=19752 on localhost:11887 at 02:30:21.770
+starting worker pid=20428 on localhost:11887 at 02:30:21.770
+starting worker pid=3208 on localhost:11887 at 02:30:21.770
+starting worker pid=1408 on localhost:11887 at 02:30:21.770
+starting worker pid=8276 on localhost:11887 at 02:30:21.770
+starting worker pid=20292 on localhost:11887 at 02:30:21.785
+starting worker pid=18064 on localhost:11887 at 02:30:21.794
+starting worker pid=8432 on localhost:11887 at 02:30:21.797
+starting worker pid=20432 on localhost:11887 at 02:30:21.810
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+[1] "Radar_Images/tiff/s_0022xx/s_00223801_tiff.tif" "Radar_Images/tiff/s_0564xx/s_05642801_tiff.tif"
+[1] "Radar_Images/tiff/s_0242xx/s_02421001_tiff.tif"
+[1] "Radar_Images/tiff/s_0622xx/s_06222901_tiff.tif"
+[1] "Radar_Images/tiff/s_0349xx/s_03495502_tiff.tif"
+[1] "Radar_Images/tiff/s_0480xx/s_04807401_tiff.tif"
+[1] "Radar_Images/tiff/s_0361xx/s_03617001_tiff.tif"
+[1] "Radar_Images/tiff/s_0359xx/s_03591001_tiff.tif"
+[1] "Radar_Images/tiff/s_0074xx/s_00742901_tiff.tif"
+[1] "Radar_Images/tiff/s_0161xx/s_01612001_tiff.tif"
+[1] "Radar_Images/tiff/s_0361xx/s_03610901_tiff.tif"
+[1] "Radar_Images/tiff/s_0321xx/s_03211301_tiff.tif"
+Time difference of 4.76337 mins
+Time difference of 4.811203 mins
+[1] "Radar_Images/tiff/s_0079xx/s_00791702_tiff.tif"
+Time difference of 4.956045 mins
+Time difference of 5.003895 mins
+[1] "Radar_Images/tiff/s_0074xx/s_00742001_tiff.tif"
+Time difference of 4.965062 mins
+Time difference of 5.012579 mins
+[1] "Radar_Images/tiff/s_0356xx/s_03569402_tiff.tif"
+Time difference of 4.992929 mins
+Time difference of 5.040479 mins
+[1] "Radar_Images/tiff/s_0338xx/s_03380001_tiff.tif"
+Time difference of 4.993962 mins
+Time difference of 5.041479 mins
+[1] "Radar_Images/tiff/s_0126xx/s_01266601_tiff.tif"
+Time difference of 5.013295 mins
+Time difference of 5.060862 mins
+[1] "Radar_Images/tiff/s_0323xx/s_03237101_tiff.tif"
+Time difference of 5.028195 mins
+Time difference of 5.075912 mins
+[1] "Radar_Images/tiff/s_0460xx/s_04600901_tiff.tif"
+Time difference of 5.031496 mins
+Time difference of 5.079029 mins
+[1] "Radar_Images/tiff/s_0124xx/s_01247202_tiff.tif"
+Time difference of 5.033245 mins
+Time difference of 5.080795 mins
+[1] "Radar_Images/tiff/s_0458xx/s_04587201_tiff.tif"
+Time difference of 5.034381 mins
+Time difference of 5.081981 mins
+[1] "Radar_Images/tiff/s_0041xx/s_00414301_tiff.tif"
+Time difference of 5.040873 mins
+Time difference of 5.088843 mins
+[1] "Radar_Images/tiff/s_0056xx/s_00563201_tiff.tif"
+Time difference of 5.042993 mins
+Time difference of 5.090612 mins
+[1] "Radar_Images/tiff/s_0105xx/s_01056402_tiff.tif"
+Time difference of 4.083378 mins
+Time difference of 8.900193 mins
+[1] "Radar_Images/tiff/s_0088xx/s_00885602_tiff.tif"
+Time difference of 4.258314 mins
+Time difference of 9.300693 mins
+[1] "Radar_Images/tiff/s_0230xx/s_02303601_tiff.tif"
+Time difference of 4.259914 mins
+Time difference of 9.301393 mins
+[1] "Radar_Images/tiff/s_0349xx/s_03491101_tiff.tif"
+Time difference of 4.292864 mins
+Time difference of 9.30746 mins
+[1] "Radar_Images/tiff/s_0038xx/s_00387701_tiff.tif"
+Time difference of 4.350264 mins
+Time difference of 9.354893 mins
+[1] "Radar_Images/tiff/s_0124xx/s_01240001_tiff.tif"
+Time difference of 4.309064 mins
+Time difference of 9.374276 mins
+[1] "Radar_Images/tiff/s_0581xx/s_05818702_tiff.tif"
+Time difference of 4.387601 mins
+Time difference of 9.469663 mins
+[1] "Radar_Images/tiff/s_0278xx/s_02784701_tiff.tif"
+Time difference of 4.462461 mins
+Time difference of 9.541546 mins
+[1] "Radar_Images/tiff/s_0461xx/s_04616401_tiff.tif"
+Time difference of 4.489825 mins
+Time difference of 9.57268 mins
+[1] "Radar_Images/tiff/s_0062xx/s_00625902_tiff.tif"
+Time difference of 4.500801 mins
+Time difference of 9.591447 mins
+[1] "Radar_Images/tiff/s_0367xx/s_03671001_tiff.tif"
+Time difference of 4.514368 mins
+Time difference of 9.605463 mins
+[1] "Radar_Images/tiff/s_0467xx/s_04679103_tiff.tif"
+Time difference of 4.534236 mins
+Time difference of 9.615131 mins
+[1] "Radar_Images/tiff/s_0253xx/s_02537901_tiff.tif"
+Time difference of 4.227299 mins
+Time difference of 13.13319 mins
+[1] "Radar_Images/tiff/s_0259xx/s_02595301_tiff.tif"
+Time difference of 4.740597 mins
+Time difference of 14.04131 mins
+[1] "Radar_Images/tiff/s_0564xx/s_05646901_tiff.tif"
+Time difference of 4.779226 mins
+Time difference of 14.08119 mins
+[1] "Radar_Images/tiff/s_0074xx/s_00741402_tiff.tif"
+Time difference of 4.798419 mins
+Time difference of 14.10589 mins
+[1] "Radar_Images/tiff/s_0139xx/s_01392601_tiff.tif"
+Time difference of 4.539018 mins
+Time difference of 14.15418 mins
+[1] "Radar_Images/tiff/s_0090xx/s_00904401_tiff.tif"
+Time difference of 4.648342 mins
+Time difference of 14.24002 mins
+[1] "Radar_Images/tiff/s_0334xx/s_03341901_tiff.tif"
+Time difference of 4.721348 mins
+Time difference of 14.26318 mins
+[1] "Radar_Images/tiff/s_0138xx/s_01386001_tiff.tif"
+Time difference of 4.795812 mins
+Time difference of 14.26626 mins
+[1] "Radar_Images/tiff/s_0363xx/s_03637001_tiff.tif"
+Time difference of 4.684613 mins
+Time difference of 14.29011 mins
+[1] "Radar_Images/tiff/s_0176xx/s_01765302_tiff.tif"
+Time difference of 4.722856 mins
+Time difference of 14.29582 mins
+[1] "Radar_Images/tiff/s_0359xx/s_03596802_tiff.tif"
+Time difference of 5.229831 mins
+Time difference of 14.60412 mins
+[1] "Radar_Images/tiff/s_0061xx/s_00615401_tiff.tif"
+Time difference of 5.256307 mins
+Time difference of 14.61125 mins
+[1] "Radar_Images/tiff/s_0320xx/s_03203501_tiff.tif"
+Time difference of 4.00126 mins
+Time difference of 17.14019 mins
+[1] "Radar_Images/tiff/s_0215xx/s_02157001_tiff.tif"
+Time difference of 4.340079 mins
+Time difference of 18.3814 mins
+[1] "Radar_Images/tiff/s_0458xx/s_04585902_tiff.tif"
+Time difference of 4.514833 mins
+Time difference of 18.59604 mins
+[1] "Radar_Images/tiff/s_0474xx/s_04741201_tiff.tif"
+Time difference of 4.349204 mins
+Time difference of 18.61242 mins
+[1] "Radar_Images/tiff/s_0025xx/s_00253101_tiff.tif"
+Time difference of 4.405817 mins
+Time difference of 18.67212 mins
+[1] "Radar_Images/tiff/s_0551xx/s_05514801_tiff.tif"
+Time difference of 4.530454 mins
+Time difference of 18.68472 mins
+[1] "Radar_Images/tiff/s_0261xx/s_02617101_tiff.tif"
+Time difference of 4.401042 mins
+Time difference of 18.69119 mins
+[1] "Radar_Images/tiff/s_0328xx/s_03289101_tiff.tif"
+Time difference of 4.618852 mins
+Time difference of 18.72479 mins
+[1] "Radar_Images/tiff/s_0562xx/s_05623401_tiff.tif"
+Time difference of 4.27519 mins
+Time difference of 18.87985 mins
+[1] "Radar_Images/tiff/s_0340xx/s_03402002_tiff.tif"
+Time difference of 4.651168 mins
+Time difference of 18.89125 mins
+[1] "Radar_Images/tiff/s_0331xx/s_03311101_tiff.tif"
+Time difference of 4.622266 mins
+Time difference of 18.91812 mins
+[1] "Radar_Images/tiff/s_0087xx/s_00878101_tiff.tif"
+Time difference of 4.338802 mins
+Time difference of 18.95035 mins
+[1] "Radar_Images/tiff/s_0470xx/s_04704301_tiff.tif"
+Time difference of 3.974372 mins
+Time difference of 21.12029 mins
+[1] "Radar_Images/tiff/s_0266xx/s_02660301_tiff.tif"
+Time difference of 4.04671 mins
+Time difference of 22.4286 mins
+[1] "Radar_Images/tiff/s_0358xx/s_03584301_tiff.tif"
+Time difference of 4.259817 mins
+Time difference of 22.95172 mins
+[1] "Radar_Images/tiff/s_0084xx/s_00847203_tiff.tif"
+Time difference of 4.446033 mins
+Time difference of 23.1308 mins
+[1] "Radar_Images/tiff/s_0366xx/s_03667101_tiff.tif"
+Time difference of 4.524733 mins
+Time difference of 23.13719 mins
+[1] "Radar_Images/tiff/s_0076xx/s_00764602_tiff.tif"
+Time difference of 4.432904 mins
+Time difference of 23.15774 mins
+[1] "Radar_Images/tiff/s_0263xx/s_02634802_tiff.tif"
+Time difference of 4.68405 mins
+Time difference of 23.3562 mins
+[1] "Radar_Images/tiff/s_0266xx/s_02668102_tiff.tif"
+Time difference of 4.454733 mins
+Time difference of 23.37315 mins
+[1] "Radar_Images/tiff/s_0092xx/s_00920702_tiff.tif"
+Time difference of 4.492357 mins
+Time difference of 23.44293 mins
+[1] "Radar_Images/tiff/s_0358xx/s_03588501_tiff.tif"
+Time difference of 4.851145 mins
+Time difference of 23.4474 mins
+[1] "Radar_Images/tiff/s_0069xx/s_00699401_tiff.tif"
+Time difference of 4.620966 mins
+Time difference of 23.5124 mins
+[1] "Radar_Images/tiff/s_0067xx/s_00679002_tiff.tif"
+Time difference of 4.727624 mins
+Time difference of 23.60941 mins
+[1] "Radar_Images/tiff/s_0160xx/s_01601301_tiff.tif"
+Time difference of 4.550177 mins
+Time difference of 25.67626 mins
+[1] "Radar_Images/tiff/s_0092xx/s_00921502_tiff.tif"
+Time difference of 4.218336 mins
+Time difference of 26.64699 mins
+[1] "Radar_Images/tiff/s_0258xx/s_02584801_tiff.tif"
+Time difference of 4.343587 mins
+Time difference of 27.29532 mins
+[1] "Radar_Images/tiff/s_0443xx/s_04435301_tiff.tif"
+Time difference of 4.485157 mins
+Time difference of 27.64294 mins
+[1] "Radar_Images/tiff/s_0274xx/s_02748601_tiff.tif"
+Time difference of 4.630773 mins
+Time difference of 27.76168 mins
+[1] "Radar_Images/tiff/s_0131xx/s_01317501_tiff.tif"
+Time difference of 4.65914 mins
+Time difference of 27.79649 mins
+[1] "Radar_Images/tiff/s_0476xx/s_04763001_tiff.tif"
+Time difference of 4.425653 mins
+Time difference of 27.79901 mins
+[1] "Radar_Images/tiff/s_0246xx/s_02462801_tiff.tif"
+Time difference of 4.542661 mins
+Time difference of 27.89893 mins
+[1] "Radar_Images/tiff/s_0422xx/s_04228101_tiff.tif"
+Time difference of 4.573933 mins
+Time difference of 28.02156 mins
+[1] "Radar_Images/tiff/s_0092xx/s_00923201_tiff.tif"
+Time difference of 4.604864 mins
+Time difference of 28.04794 mins
+[1] "Radar_Images/tiff/s_0559xx/s_05597301_tiff.tif"
+Time difference of 4.547219 mins
+Time difference of 28.06001 mins
+[1] "Radar_Images/tiff/s_0498xx/s_04987401_tiff.tif"
+Time difference of 4.661273 mins
+Time difference of 28.27136 mins
+[1] "Radar_Images/tiff/s_0265xx/s_02659901_tiff.tif"
+Time difference of 4.375796 mins
+Time difference of 30.05249 mins
+[1] "Radar_Images/tiff/s_0052xx/s_00522402_tiff.tif"
+Time difference of 4.22967 mins
+Time difference of 30.87671 mins
+[1] "Radar_Images/tiff/s_0071xx/s_00711401_tiff.tif"
+Time difference of 4.104486 mins
+Time difference of 31.39986 mins
+[1] "Radar_Images/tiff/s_0374xx/s_03747201_tiff.tif"
+Time difference of 4.124431 mins
+Time difference of 31.76743 mins
+[1] "Radar_Images/tiff/s_0037xx/s_00370902_tiff.tif"
+Time difference of 4.088 mins
+Time difference of 31.84969 mins
+[1] "Radar_Images/tiff/s_0331xx/s_03315401_tiff.tif"
+Time difference of 4.204767 mins
+Time difference of 32.00421 mins
+[1] "Radar_Images/tiff/s_0119xx/s_01194401_tiff.tif"
+Time difference of 4.340833 mins
+Time difference of 32.13741 mins
+[1] "Radar_Images/tiff/s_0033xx/s_00337102_tiff.tif"
+Time difference of 4.278983 mins
+Time difference of 32.17796 mins
+[1] "Radar_Images/tiff/s_0066xx/s_00666901_tiff.tif"
+Time difference of 4.353417 mins
+Time difference of 32.40143 mins
+[1] "Radar_Images/tiff/s_0266xx/s_02666201_tiff.tif"
+Time difference of 4.3939 mins
+Time difference of 32.45399 mins
+[1] "Radar_Images/tiff/s_0129xx/s_01298101_tiff.tif"
+Time difference of 4.50415 mins
+Time difference of 32.52576 mins
+[1] "Radar_Images/tiff/s_0358xx/s_03589302_tiff.tif"
+Time difference of 4.308018 mins
+Time difference of 32.57946 mins
+[1] "Radar_Images/tiff/s_0459xx/s_04595601_tiff.tif"
+Time difference of 4.301117 mins
+Time difference of 34.35406 mins
+[1] "Radar_Images/tiff/s_0272xx/s_02720601_tiff.tif"
+Time difference of 4.216708 mins
+Time difference of 35.09348 mins
+[1] "Radar_Images/tiff/s_0068xx/s_00680801_tiff.tif"
+Time difference of 4.160738 mins
+Time difference of 35.56065 mins
+[1] "Radar_Images/tiff/s_0324xx/s_03245801_tiff.tif"
+Time difference of 4.235467 mins
+Time difference of 36.24018 mins
+[1] "Radar_Images/tiff/s_0496xx/s_04962201_tiff.tif"
+Time difference of 4.539833 mins
+Time difference of 36.30776 mins
+[1] "Radar_Images/tiff/s_0042xx/s_00429801_tiff.tif"
+Time difference of 4.501367 mins
+Time difference of 36.35113 mins
+[1] "Radar_Images/tiff/s_0049xx/s_00493301_tiff.tif"
+Time difference of 4.291133 mins
+Time difference of 36.46914 mins
+[1] "Radar_Images/tiff/s_0187xx/s_01875601_tiff.tif"
+Time difference of 4.334017 mins
+Time difference of 36.78803 mins
+[1] "Radar_Images/tiff/s_0262xx/s_02628402_tiff.tif"
+Time difference of 4.683567 mins
+Time difference of 36.82106 mins
+[1] "Radar_Images/tiff/s_0463xx/s_04634301_tiff.tif"
+Time difference of 4.648567 mins
+Time difference of 37.05006 mins
+[1] "Radar_Images/tiff/s_0242xx/s_02426101_tiff.tif"
+Time difference of 4.4903 mins
+Time difference of 37.06979 mins
+[1] "Radar_Images/tiff/s_0552xx/s_05525901_tiff.tif"
+Time difference of 4.546944 mins
+Time difference of 37.07275 mins
+[1] "Radar_Images/tiff/s_0367xx/s_03676401_tiff.tif"
+Time difference of 4.4531 mins
+Time difference of 38.81291 mins
+[1] "Radar_Images/tiff/s_0059xx/s_00594902_tiff.tif"
+Time difference of 4.379841 mins
+Time difference of 39.47337 mins
+[1] "Radar_Images/tiff/s_0376xx/s_03764101_tiff.tif"
+Time difference of 4.448664 mins
+Time difference of 40.00936 mins
+[1] "Radar_Images/tiff/s_0450xx/s_04508101_tiff.tif"
+Time difference of 4.540875 mins
+Time difference of 40.78112 mins
+[1] "Radar_Images/tiff/s_0071xx/s_00712701_tiff.tif"
+Time difference of 4.46018 mins
+Time difference of 40.81132 mins
+[1] "Radar_Images/tiff/s_0460xx/s_04600501_tiff.tif"
+Time difference of 4.58113 mins
+Time difference of 40.88891 mins
+[1] "Radar_Images/tiff/s_0568xx/s_05681001_tiff.tif"
+Time difference of 4.771647 mins
+Time difference of 41.24087 mins
+[1] "Radar_Images/tiff/s_0447xx/s_04477301_tiff.tif"
+Time difference of 4.45513 mins
+Time difference of 41.24371 mins
+[1] "Radar_Images/tiff/s_0263xx/s_02639101_tiff.tif"
+Time difference of 4.414364 mins
+Time difference of 41.46519 mins
+[1] "Radar_Images/tiff/s_0565xx/s_05656701_tiff.tif"
+Time difference of 4.43069 mins
+Time difference of 41.50056 mins
+[1] "Radar_Images/tiff/s_0413xx/s_04132401_tiff.tif"
+Time difference of 4.717518 mins
+Time difference of 41.53861 mins
+[1] "Radar_Images/tiff/s_0119xx/s_01193201_tiff.tif"
+Time difference of 4.50028 mins
+Time difference of 41.57311 mins
+[1] "Radar_Images/tiff/s_0569xx/s_05698601_tiff.tif"
+Time difference of 4.347364 mins
+Time difference of 43.16101 mins
+[1] "Radar_Images/tiff/s_0334xx/s_03342201_tiff.tif"
+Time difference of 4.198464 mins
+Time difference of 43.67189 mins
+[1] "Radar_Images/tiff/s_0618xx/s_06186801_tiff.tif"
+Time difference of 4.212567 mins
+Time difference of 44.22197 mins
+[1] "Radar_Images/tiff/s_0407xx/s_04076901_tiff.tif"
+Time difference of 4.261412 mins
+Time difference of 45.04287 mins
+[1] "Radar_Images/tiff/s_0185xx/s_01850601_tiff.tif"
+Time difference of 4.40845 mins
+Time difference of 45.21982 mins
+[1] "Radar_Images/tiff/s_0558xx/s_05583501_tiff.tif"
+Time difference of 4.694099 mins
+Time difference of 45.58304 mins
+[1] "Radar_Images/tiff/s_0244xx/s_02444701_tiff.tif"
+Time difference of 4.36185 mins
+Time difference of 45.83046 mins
+[1] "Radar_Images/tiff/s_0362xx/s_03629801_tiff.tif"
+Time difference of 4.707755 mins
+Time difference of 45.94901 mins
+[1] "Radar_Images/tiff/s_0090xx/s_00905102_tiff.tif"
+Time difference of 4.821767 mins
+Time difference of 46.06554 mins
+[1] "Radar_Images/tiff/s_0032xx/s_00329901_tiff.tif"
+Time difference of 4.597283 mins
+Time difference of 46.17046 mins
+[1] "Radar_Images/tiff/s_0081xx/s_00814301_tiff.tif"
+Time difference of 4.637917 mins
+Time difference of 46.17699 mins
+[1] "Radar_Images/tiff/s_0483xx/s_04830501_tiff.tif"
+Time difference of 4.81145 mins
+Time difference of 46.31219 mins
+[1] "Radar_Images/tiff/s_0376xx/s_03760401_tiff.tif"
+Time difference of 4.108383 mins
+Time difference of 47.26966 mins
+[1] "Radar_Images/tiff/s_0070xx/s_00706402_tiff.tif"
+Time difference of 4.3152 mins
+Time difference of 47.98759 mins
+[1] "Radar_Images/tiff/s_0026xx/s_00263002_tiff.tif"
+Time difference of 4.564143 mins
+Time difference of 48.78673 mins
+[1] "Radar_Images/tiff/s_0259xx/s_02596002_tiff.tif"
+Time difference of 4.653556 mins
+Time difference of 49.69648 mins
+[1] "Radar_Images/tiff/s_0559xx/s_05596101_tiff.tif"
+Time difference of 4.721856 mins
+Time difference of 49.94313 mins
+[1] "Radar_Images/tiff/s_0099xx/s_00992001_tiff.tif"
+Time difference of 4.653899 mins
+Time difference of 50.23699 mins
+[1] "Radar_Images/tiff/s_0219xx/s_02199102_tiff.tif"
+Time difference of 4.750972 mins
+Time difference of 50.58149 mins
+[1] "Radar_Images/tiff/s_0092xx/s_00920701_tiff.tif"
+Time difference of 4.583156 mins
+Time difference of 50.64956 mins
+[1] "Radar_Images/tiff/s_0348xx/s_03486301_tiff.tif"
+Time difference of 4.778389 mins
+Time difference of 50.72744 mins
+[1] "Radar_Images/tiff/s_0367xx/s_03672001_tiff.tif"
+Time difference of 4.639935 mins
+Time difference of 50.81699 mins
+[1] "Radar_Images/tiff/s_0480xx/s_04807002_tiff.tif"
+Time difference of 4.708739 mins
+Time difference of 50.87923 mins
+[1] "Radar_Images/tiff/s_0131xx/s_01312901_tiff.tif"
+Time difference of 4.654713 mins
+Time difference of 50.96697 mins
+[1] "Radar_Images/tiff/s_0560xx/s_05606302_tiff.tif"
+Time difference of 4.769489 mins
+Time difference of 52.03919 mins
+[1] "Radar_Images/tiff/s_0040xx/s_00400001_tiff.tif"
+Time difference of 4.813302 mins
+Time difference of 52.80174 mins
+[1] "Radar_Images/tiff/s_0081xx/s_00812201_tiff.tif"
+Time difference of 4.799292 mins
+Time difference of 53.58615 mins
+[1] "Radar_Images/tiff/s_0592xx/s_05928901_tiff.tif"
+Time difference of 4.189933 mins
+Time difference of 53.88646 mins
+[1] "Radar_Images/tiff/s_0068xx/s_00689202_tiff.tif"
+Time difference of 4.502872 mins
+Time difference of 54.44603 mins
+[1] "Radar_Images/tiff/s_0049xx/s_00498701_tiff.tif"
+Time difference of 4.462533 mins
+Time difference of 54.69956 mins
+[1] "Radar_Images/tiff/s_0038xx/s_00386302_tiff.tif"
+Time difference of 4.623768 mins
+Time difference of 55.20531 mins
+[1] "Radar_Images/tiff/s_0074xx/s_00744101_tiff.tif"
+Time difference of 4.708485 mins
+Time difference of 55.52551 mins
+[1] "Radar_Images/tiff/s_0068xx/s_00683801_tiff.tif"
+Time difference of 4.971435 mins
+Time difference of 55.62163 mins
+[1] "Radar_Images/tiff/s_0421xx/s_04215501_tiff.tif"
+Time difference of 4.929785 mins
+Time difference of 55.6579 mins
+[1] "Radar_Images/tiff/s_0345xx/s_03451402_tiff.tif"
+Time difference of 4.833351 mins
+Time difference of 55.71263 mins
+[1] "Radar_Images/tiff/s_0453xx/s_04533302_tiff.tif"
+Time difference of 4.848618 mins
+Time difference of 55.81595 mins
+[1] "Radar_Images/tiff/s_0356xx/s_03566103_tiff.tif"
+Time difference of 4.276618 mins
+Time difference of 56.31598 mins
+[1] "Radar_Images/tiff/s_0334xx/s_03345201_tiff.tif"
+Time difference of 4.632735 mins
+Time difference of 57.43453 mins
+[1] "Radar_Images/tiff/s_0056xx/s_00563101_tiff.tif"
+Time difference of 4.211185 mins
+Time difference of 58.09816 mins
+[1] "Radar_Images/tiff/s_0362xx/s_03622501_tiff.tif"
+Time difference of 4.515835 mins
+Time difference of 58.10381 mins
+[1] "Radar_Images/tiff/s_0382xx/s_03829801_tiff.tif"
+Time difference of 4.406819 mins
+Time difference of 58.85296 mins
+[1] "Radar_Images/tiff/s_0359xx/s_03590302_tiff.tif"
+Time difference of 4.315202 mins
+Time difference of 59.01483 mins
+[1] "Radar_Images/tiff/s_0051xx/s_00510101_tiff.tif"
+Time difference of 4.289412 mins
+Time difference of 59.49496 mins
+[1] "Radar_Images/tiff/s_0070xx/s_00704301_tiff.tif"
+Time difference of 4.2861 mins
+Time difference of 59.90775 mins
+[1] "Radar_Images/tiff/s_0036xx/s_00369701_tiff.tif"
+Time difference of 4.425285 mins
+Time difference of 59.95085 mins
+[1] "Radar_Images/tiff/s_0389xx/s_03891001_tiff.tif"
+Time difference of 4.428345 mins
+Time difference of 1.001438 hours
+[1] "Radar_Images/tiff/s_0261xx/s_02617901_tiff.tif"
+Time difference of 4.392527 mins
+Time difference of 1.001755 hours
+[1] "Radar_Images/tiff/s_0247xx/s_02473301_tiff.tif"
+Time difference of 4.292775 mins
+Time difference of 1.001824 hours
+[1] "Radar_Images/tiff/s_0586xx/s_05864202_tiff.tif"
+Time difference of 4.310624 mins
+Time difference of 1.010444 hours
+[1] "Radar_Images/tiff/s_0234xx/s_02341601_tiff.tif"
+Time difference of 4.439574 mins
+Time difference of 1.031236 hours
+[1] "Radar_Images/tiff/s_0165xx/s_01659201_tiff.tif"
+Time difference of 4.306841 mins
+Time difference of 1.040084 hours
+[1] "Radar_Images/tiff/s_0558xx/s_05585701_tiff.tif"
+Time difference of 4.492074 mins
+Time difference of 1.043266 hours
+[1] "Radar_Images/tiff/s_0356xx/s_03567501_tiff.tif"
+Time difference of 4.376191 mins
+Time difference of 1.05382 hours
+[1] "Radar_Images/tiff/s_0451xx/s_04518501_tiff.tif"
+Time difference of 4.249975 mins
+Time difference of 1.054414 hours
+[1] "Radar_Images/tiff/s_0595xx/s_05955501_tiff.tif"
+Time difference of 4.264374 mins
+Time difference of 1.062656 hours
+[1] "Radar_Images/tiff/s_0170xx/s_01700301_tiff.tif"
+Time difference of 4.292374 mins
+Time difference of 1.070721 hours
+[1] "Radar_Images/tiff/s_0369xx/s_03697402_tiff.tif"
+Time difference of 4.395623 mins
+Time difference of 1.071724 hours
+[1] "Radar_Images/tiff/s_0033xx/s_00337501_tiff.tif"
+Time difference of 4.287257 mins
+Time difference of 1.0729 hours
+[1] "Radar_Images/tiff/s_0472xx/s_04726801_tiff.tif"
+Time difference of 4.470157 mins
+Time difference of 1.076259 hours
+[1] "Radar_Images/tiff/s_0443xx/s_04434202_tiff.tif"
+Time difference of 4.649824 mins
+Time difference of 1.079322 hours
+[1] "Radar_Images/tiff/s_0595xx/s_05952401_tiff.tif"
+Time difference of 4.309117 mins
+Time difference of 1.082264 hours
+[1] "Radar_Images/tiff/s_0333xx/s_03337001_tiff.tif"
+Time difference of 4.109064 mins
+Time difference of 1.099721 hours
+[1] "Radar_Images/tiff/s_0131xx/s_01314801_tiff.tif"
+Time difference of 4.577834 mins
+Time difference of 1.116382 hours
+[1] "Radar_Images/tiff/s_0271xx/s_02719901_tiff.tif"
+Time difference of 4.558383 mins
+Time difference of 1.11925 hours
+[1] "Radar_Images/tiff/s_0369xx/s_03697401_tiff.tif"
+Time difference of 4.08985 mins
+Time difference of 1.121985 hours
+[1] "Radar_Images/tiff/s_0135xx/s_01358301_tiff.tif"
+Time difference of 4.223267 mins
+Time difference of 1.124803 hours
+[1] "Radar_Images/tiff/s_0549xx/s_05497001_tiff.tif"
+Time difference of 4.048399 mins
+Time difference of 1.13013 hours
+[1] "Radar_Images/tiff/s_0077xx/s_00770701_tiff.tif"
+Time difference of 4.081783 mins
+Time difference of 1.138751 hours
+[1] "Radar_Images/tiff/s_0461xx/s_04617501_tiff.tif"
+Time difference of 4.346483 mins
+Time difference of 1.144166 hours
+[1] "Radar_Images/tiff/s_0222xx/s_02227901_tiff.tif"
+Time difference of 4.569367 mins
+Time difference of 1.149056 hours
+[1] "Radar_Images/tiff/s_0366xx/s_03663301_tiff.tif"
+Time difference of 4.5081 mins
+Time difference of 1.151403 hours
+[1] "Radar_Images/tiff/s_0560xx/s_05602902_tiff.tif"
+Time difference of 4.372517 mins
+Time difference of 1.152209 hours
+[1] "Radar_Images/tiff/s_0042xx/s_00428601_tiff.tif"
+Time difference of 4.389933 mins
+Time difference of 1.155435 hours
+[1] "Radar_Images/tiff/s_0252xx/s_02527901_tiff.tif"
+Time difference of 4.0598 mins
+Time difference of 1.167385 hours
+[1] "Radar_Images/tiff/s_0260xx/s_02600601_tiff.tif"
+Time difference of 4.4344 mins
+Time difference of 1.19029 hours
+[1] "Radar_Images/tiff/s_0238xx/s_02389001_tiff.tif"
+Time difference of 4.337352 mins
+Time difference of 1.19154 hours
+[1] "Radar_Images/tiff/s_0376xx/s_03764202_tiff.tif"
+Time difference of 4.259183 mins
+Time difference of 1.192977 hours
+[1] "Radar_Images/tiff/s_0572xx/s_05726901_tiff.tif"
+Time difference of 4.229717 mins
+Time difference of 1.195299 hours
+[1] "Radar_Images/tiff/s_0402xx/s_04022002_tiff.tif"
+Time difference of 4.124117 mins
+Time difference of 1.198867 hours
+[1] "Radar_Images/tiff/s_0377xx/s_03772301_tiff.tif"
+Time difference of 4.22705 mins
+Time difference of 1.209203 hours
+[1] "Radar_Images/tiff/s_0227xx/s_02277701_tiff.tif"
+Time difference of 4.229267 mins
+Time difference of 1.219545 hours
+[1] "Radar_Images/tiff/s_0166xx/s_01669401_tiff.tif"
+Time difference of 4.52428 mins
+Time difference of 1.219603 hours
+[1] "Radar_Images/tiff/s_0125xx/s_01250901_tiff.tif"
+Time difference of 4.332914 mins
+Time difference of 1.223619 hours
+[1] "Radar_Images/tiff/s_0089xx/s_00891802_tiff.tif"
+Time difference of 4.432317 mins
+Time difference of 1.226081 hours
+[1] "Radar_Images/tiff/s_0042xx/s_00428201_tiff.tif"
+Time difference of 4.292592 mins
+Time difference of 1.226998 hours
+[1] "Radar_Images/tiff/s_0068xx/s_00681401_tiff.tif"
+Time difference of 4.335582 mins
+Time difference of 1.239647 hours
+[1] "Radar_Images/tiff/s_0039xx/s_00393802_tiff.tif"
+Time difference of 4.334405 mins
+Time difference of 1.262531 hours
+[1] "Radar_Images/tiff/s_0565xx/s_05657901_tiff.tif"
+Time difference of 4.228755 mins
+Time difference of 1.26346 hours
+[1] "Radar_Images/tiff/s_0105xx/s_01055801_tiff.tif"
+Time difference of 4.547888 mins
+Time difference of 1.267339 hours
+[1] "Radar_Images/tiff/s_0558xx/s_05588103_tiff.tif"
+Time difference of 4.564312 mins
+Time difference of 1.271375 hours
+[1] "Radar_Images/tiff/s_0361xx/s_03615602_tiff.tif"
+Time difference of 4.429471 mins
+Time difference of 1.272692 hours
+[1] "Radar_Images/tiff/s_0272xx/s_02721402_tiff.tif"
+Time difference of 4.646255 mins
+Time difference of 1.286641 hours
+[1] "Radar_Images/tiff/s_0443xx/s_04434701_tiff.tif"
+Time difference of 4.608091 mins
+Time difference of 1.296413 hours
+[1] "Radar_Images/tiff/s_0477xx/s_04776801_tiff.tif"
+Time difference of 5.070123 mins
+Time difference of 1.304061 hours
+[1] "Radar_Images/tiff/s_0413xx/s_04137201_tiff.tif"
+Time difference of 4.939784 mins
+Time difference of 1.305952 hours
+[1] "Radar_Images/tiff/s_0047xx/s_00475201_tiff.tif"
+Time difference of 4.883217 mins
+Time difference of 1.308386 hours
+[1] "Radar_Images/tiff/s_0380xx/s_03806901_tiff.tif"
+Time difference of 5.169289 mins
+Time difference of 1.312248 hours
+[1] "Radar_Images/tiff/s_0353xx/s_03535801_tiff.tif"
+Time difference of 4.676329 mins
+Time difference of 1.317604 hours
+[1] "Radar_Images/tiff/s_0262xx/s_02624102_tiff.tif"
+Time difference of 4.491363 mins
+Time difference of 1.337388 hours
+[1] "Radar_Images/tiff/s_0461xx/s_04610001_tiff.tif"
+Time difference of 4.835463 mins
+Time difference of 1.344057 hours
+[1] "Radar_Images/tiff/s_0353xx/s_03539802_tiff.tif"
+Time difference of 4.546832 mins
+Time difference of 1.347159 hours
+[1] "Radar_Images/tiff/s_0037xx/s_00370302_tiff.tif"
+Time difference of 4.816167 mins
+Time difference of 1.34761 hours
+[1] "Radar_Images/tiff/s_0494xx/s_04945101_tiff.tif"
+Time difference of 4.659729 mins
+Time difference of 1.350357 hours
+[1] "Radar_Images/tiff/s_0470xx/s_04707401_tiff.tif"
+Time difference of 4.469693 mins
+Time difference of 1.361137 hours
+[1] "Radar_Images/tiff/s_0070xx/s_00705701_tiff.tif"
+Time difference of 4.391627 mins
+Time difference of 1.369608 hours
+[1] "Radar_Images/tiff/s_0568xx/s_05686901_tiff.tif"
+Time difference of 4.6414 mins
+Time difference of 1.381418 hours
+[1] "Radar_Images/tiff/s_0093xx/s_00931001_tiff.tif"
+Time difference of 4.5845 mins
+Time difference of 1.382361 hours
+[1] "Radar_Images/tiff/s_0073xx/s_00737601_tiff.tif"
+Time difference of 4.537866 mins
+Time difference of 1.384018 hours
+[1] "Radar_Images/tiff/s_0087xx/s_00879101_tiff.tif"
+Time difference of 4.348017 mins
+Time difference of 1.390072 hours
+[1] "Radar_Images/tiff/s_0085xx/s_00855001_tiff.tif"
+Time difference of 4.987069 mins
+Time difference of 1.395372 hours
+[1] "Radar_Images/tiff/s_0366xx/s_03667002_tiff.tif"
+Time difference of 4.846384 mins
+Time difference of 1.418161 hours
+[1] "Radar_Images/tiff/s_0327xx/s_03270801_tiff.tif"
+Time difference of 4.727898 mins
+Time difference of 1.422856 hours
+[1] "Radar_Images/tiff/s_0368xx/s_03684501_tiff.tif"
+Time difference of 4.547884 mins
+Time difference of 1.426168 hours
+[1] "Radar_Images/tiff/s_0175xx/s_01754301_tiff.tif"
+Time difference of 4.72635 mins
+Time difference of 1.426383 hours
+[1] "Radar_Images/tiff/s_0034xx/s_00348002_tiff.tif"
+Time difference of 4.208229 mins
+Time difference of 1.431275 hours
+[1] "Radar_Images/tiff/s_0358xx/s_03588401_tiff.tif"
+Time difference of 5.058617 mins
+Time difference of 1.43147 hours
+[1] "Radar_Images/tiff/s_0564xx/s_05642102_tiff.tif"
+Time difference of 4.098474 mins
+Time difference of 1.437917 hours
+[1] "Radar_Images/tiff/s_0458xx/s_04588601_tiff.tif"
+Time difference of 4.563917 mins
+Time difference of 1.460084 hours
+[1] "Radar_Images/tiff/s_0194xx/s_01947301_tiff.tif"
+Time difference of 4.506853 mins
+Time difference of 1.465201 hours
+[1] "Radar_Images/tiff/s_0262xx/s_02629701_tiff.tif"
+Time difference of 5.083035 mins
+Time difference of 1.466136 hours
+[1] "Radar_Images/tiff/s_0468xx/s_04684301_tiff.tif"
+Time difference of 5.06495 mins
+Time difference of 1.466778 hours
+[1] "Radar_Images/tiff/s_0556xx/s_05568901_tiff.tif"
+Time difference of 4.812333 mins
+Time difference of 1.475578 hours
+[1] "Radar_Images/tiff/s_0186xx/s_01860001_tiff.tif"
+Time difference of 4.753111 mins
+Time difference of 1.497388 hours
+[1] "Radar_Images/tiff/s_0059xx/s_00598801_tiff.tif"
+Time difference of 4.618434 mins
+Time difference of 1.499832 hours
+[1] "Radar_Images/tiff/s_0555xx/s_05550501_tiff.tif"
+Time difference of 4.450729 mins
+Time difference of 1.500348 hours
+[1] "Radar_Images/tiff/s_0348xx/s_03488402_tiff.tif"
+Time difference of 4.865087 mins
+Time difference of 1.507469 hours
+[1] "Radar_Images/tiff/s_0376xx/s_03760801_tiff.tif"
+Time difference of 4.57707 mins
+Time difference of 1.507761 hours
+[1] "Radar_Images/tiff/s_0321xx/s_03210901_tiff.tif"
+Time difference of 4.588087 mins
+Time difference of 1.507772 hours
+[1] "Radar_Images/tiff/s_0587xx/s_05872901_tiff.tif"
+Time difference of 4.373437 mins
+Time difference of 1.510808 hours
+[1] "Radar_Images/tiff/s_0509xx/s_05095301_tiff.tif"
+Time difference of 4.560903 mins
+Time difference of 1.5361 hours
+[1] "Radar_Images/tiff/s_0051xx/s_00511501_tiff.tif"
+Time difference of 4.833587 mins
+Time difference of 1.545762 hours
+[1] "Radar_Images/tiff/s_0030xx/s_00306402_tiff.tif"
+Time difference of 4.82382 mins
+Time difference of 1.547175 hours
+[1] "Radar_Images/tiff/s_0269xx/s_02694101_tiff.tif"
+Time difference of 4.993995 mins
+Time difference of 1.54937 hours
+[1] "Radar_Images/tiff/s_0135xx/s_01354101_tiff.tif"
+Time difference of 4.798057 mins
+Time difference of 1.555574 hours
+[1] "Radar_Images/tiff/s_0322xx/s_03224001_tiff.tif"
+Time difference of 4.748 mins
+Time difference of 1.576669 hours
+[1] "Radar_Images/tiff/s_0334xx/s_03342501_tiff.tif"
+Time difference of 4.777537 mins
+Time difference of 1.579975 hours
+[1] "Radar_Images/tiff/s_0366xx/s_03664801_tiff.tif"
+Time difference of 5.254854 mins
+Time difference of 1.587413 hours
+[1] "Radar_Images/tiff/s_0100xx/s_01004502_tiff.tif"
+Time difference of 5.204648 mins
+Time difference of 1.594517 hours
+[1] "Radar_Images/tiff/s_0382xx/s_03822301_tiff.tif"
+Time difference of 5.274834 mins
+Time difference of 1.595676 hours
+[1] "Radar_Images/tiff/s_0466xx/s_04663101_tiff.tif"
+Time difference of 5.305868 mins
+Time difference of 1.595908 hours
+[1] "Radar_Images/tiff/s_0359xx/s_03599701_tiff.tif"
+Time difference of 5.170066 mins
+Time difference of 1.596987 hours
+[1] "Radar_Images/tiff/s_0373xx/s_03735902_tiff.tif"
+Time difference of 4.993484 mins
+Time difference of 1.619329 hours
+[1] "Radar_Images/tiff/s_0562xx/s_05623001_tiff.tif"
+Time difference of 4.687701 mins
+Time difference of 1.625306 hours
+[1] "Radar_Images/tiff/s_0348xx/s_03486801_tiff.tif"
+Time difference of 4.896568 mins
+Time difference of 1.627383 hours
+[1] "Radar_Images/tiff/s_0040xx/s_00409101_tiff.tif"
+Time difference of 4.804667 mins
+Time difference of 1.635652 hours
+[1] "Radar_Images/tiff/s_0039xx/s_00393201_tiff.tif"
+Time difference of 5.209284 mins
+Time difference of 1.636193 hours
+[1] "Radar_Images/tiff/s_0076xx/s_00766701_tiff.tif"
+Time difference of 4.399033 mins
+Time difference of 1.64999 hours
+[1] "Radar_Images/tiff/s_0560xx/s_05603301_tiff.tif"
+Time difference of 4.243217 mins
+Time difference of 1.650763 hours
+[1] "Radar_Images/tiff/s_0041xx/s_00411302_tiff.tif"
+Time difference of 4.81965 mins
+Time difference of 1.66775 hours
+[1] "Radar_Images/tiff/s_0076xx/s_00760101_tiff.tif"
+Time difference of 4.486799 mins
+Time difference of 1.669302 hours
+[1] "Radar_Images/tiff/s_0074xx/s_00748201_tiff.tif"
+Time difference of 4.427934 mins
+Time difference of 1.669476 hours
+[1] "Radar_Images/tiff/s_0445xx/s_04451801_tiff.tif"
+Time difference of 4.516588 mins
+Time difference of 1.672274 hours
+[1] "Radar_Images/tiff/s_0467xx/s_04670301_tiff.tif"
+Time difference of 4.629962 mins
+Time difference of 1.673076 hours
+[1] "Radar_Images/tiff/s_0138xx/s_01384501_tiff.tif"
+Time difference of 4.361251 mins
+Time difference of 1.692033 hours
+[1] "Radar_Images/tiff/s_0360xx/s_03600501_tiff.tif"
+Time difference of 4.287917 mins
+Time difference of 1.696772 hours
+[1] "Radar_Images/tiff/s_0369xx/s_03691701_tiff.tif"
+Time difference of 4.386004 mins
+Time difference of 1.700487 hours
+[1] "Radar_Images/tiff/s_0175xx/s_01750802_tiff.tif"
+Time difference of 4.312477 mins
+Time difference of 1.707527 hours
+[1] "Radar_Images/tiff/s_0448xx/s_04483801_tiff.tif"
+Time difference of 4.750483 mins
+Time difference of 1.715368 hours
+[1] "Radar_Images/tiff/s_0047xx/s_00472302_tiff.tif"
+Time difference of 4.081202 mins
+Time difference of 1.718785 hours
+[1] "Radar_Images/tiff/s_0412xx/s_04120002_tiff.tif"
+Time difference of 4.260234 mins
+Time difference of 1.720995 hours
+[1] "Radar_Images/tiff/s_0586xx/s_05868801_tiff.tif"
+Time difference of 4.527705 mins
+Time difference of 1.744765 hours
+[1] "Radar_Images/tiff/s_0259xx/s_02591801_tiff.tif"
+Time difference of 4.667 mins
+Time difference of 1.747262 hours
+[1] "Radar_Images/tiff/s_0622xx/s_06220201_tiff.tif"
+Time difference of 4.513118 mins
+Time difference of 1.747498 hours
+[1] "Radar_Images/tiff/s_0570xx/s_05703801_tiff.tif"
+Time difference of 4.816553 mins
+Time difference of 1.748041 hours
+[1] "Radar_Images/tiff/s_0357xx/s_03577301_tiff.tif"
+Time difference of 4.667167 mins
+Time difference of 1.750872 hours
+[1] "Radar_Images/tiff/s_0621xx/s_06215301_tiff.tif"
+Time difference of 4.355917 mins
+Time difference of 1.764727 hours
+[1] "Radar_Images/tiff/s_0266xx/s_02663001_tiff.tif"
+Time difference of 4.441334 mins
+Time difference of 1.770795 hours
+[1] "Radar_Images/tiff/s_0034xx/s_00344602_tiff.tif"
+Time difference of 4.23502 mins
+Time difference of 1.771072 hours
+[1] "Radar_Images/tiff/s_0278xx/s_02781101_tiff.tif"
+Time difference of 4.52047 mins
+Time difference of 1.782869 hours
+[1] "Radar_Images/tiff/s_0462xx/s_04622501_tiff.tif"
+Time difference of 4.329737 mins
+Time difference of 1.790948 hours
+[1] "Radar_Images/tiff/s_0160xx/s_01600701_tiff.tif"
+Time difference of 4.584686 mins
+Time difference of 1.79178 hours
+[1] "Radar_Images/tiff/s_0138xx/s_01388501_tiff.tif"
+Time difference of 4.377255 mins
+Time difference of 1.79395 hours
+[1] "Radar_Images/tiff/s_0363xx/s_03633501_tiff.tif"
+Time difference of 4.460913 mins
+Time difference of 1.819114 hours
+[1] "Radar_Images/tiff/s_0076xx/s_00765001_tiff.tif"
+Time difference of 4.473829 mins
+Time difference of 1.822062 hours
+[1] "Radar_Images/tiff/s_0568xx/s_05684201_tiff.tif"
+Time difference of 4.632546 mins
+Time difference of 1.824472 hours
+[1] "Radar_Images/tiff/s_0128xx/s_01284503_tiff.tif"
+Time difference of 4.658163 mins
+Time difference of 1.825681 hours
+[1] "Radar_Images/tiff/s_0144xx/s_01444102_tiff.tif"
+Time difference of 5.048266 mins
+Time difference of 1.835011 hours
+[1] "Radar_Images/tiff/s_0282xx/s_02821301_tiff.tif"
+Time difference of 4.520226 mins
+Time difference of 1.84642 hours
+[1] "Radar_Images/tiff/s_0222xx/s_02229101_tiff.tif"
+Time difference of 4.952529 mins
+Time difference of 1.84727 hours
+[1] "Radar_Images/tiff/s_0195xx/s_01951502_tiff.tif"
+Time difference of 4.786413 mins
+Time difference of 1.850587 hours
+[1] "Radar_Images/tiff/s_0053xx/s_00531801_tiff.tif"
+Time difference of 4.883742 mins
+Time difference of 1.864266 hours
+[1] "Radar_Images/tiff/s_0473xx/s_04731901_tiff.tif"
+Time difference of 4.879376 mins
+Time difference of 1.872271 hours
+[1] "Radar_Images/tiff/s_0266xx/s_02663202_tiff.tif"
+Time difference of 4.715759 mins
+Time difference of 1.872563 hours
+[1] "Radar_Images/tiff/s_0032xx/s_00329602_tiff.tif"
+Time difference of 5.126192 mins
+Time difference of 1.877218 hours
+[1] "Radar_Images/tiff/s_0106xx/s_01062702_tiff.tif"
+Time difference of 4.87377 mins
+Time difference of 1.900344 hours
+[1] "Radar_Images/tiff/s_0264xx/s_02644001_tiff.tif"
+Time difference of 4.71747 mins
+Time difference of 1.900688 hours
+[1] "Radar_Images/tiff/s_0357xx/s_03578901_tiff.tif"
+Time difference of 4.695565 mins
+Time difference of 1.903947 hours
+[1] "Radar_Images/tiff/s_0202xx/s_02025101_tiff.tif"
+Time difference of 5.058377 mins
+Time difference of 1.908781 hours
+[1] "Radar_Images/tiff/s_0048xx/s_00480501_tiff.tif"
+Time difference of 4.777336 mins
+Time difference of 1.914634 hours
+[1] "Radar_Images/tiff/s_0028xx/s_00282902_tiff.tif"
+Time difference of 4.681778 mins
+Time difference of 1.924451 hours
+[1] "Radar_Images/tiff/s_0070xx/s_00700501_tiff.tif"
+Time difference of 4.852217 mins
+Time difference of 1.928141 hours
+[1] "Radar_Images/tiff/s_0106xx/s_01065402_tiff.tif"
+Time difference of 4.796887 mins
+Time difference of 1.930537 hours
+[1] "Radar_Images/tiff/s_0088xx/s_00885903_tiff.tif"
+Time difference of 4.575687 mins
+Time difference of 1.94053 hours
+[1] "Radar_Images/tiff/s_0273xx/s_02735502_tiff.tif"
+Time difference of 4.799012 mins
+Time difference of 1.952303 hours
+[1] "Radar_Images/tiff/s_0051xx/s_00510901_tiff.tif"
+Time difference of 4.86967 mins
+Time difference of 1.953725 hours
+[1] "Radar_Images/tiff/s_0558xx/s_05584201_tiff.tif"
+Time difference of 4.866987 mins
+Time difference of 1.958336 hours
+[1] "Radar_Images/tiff/s_0467xx/s_04675901_tiff.tif"
+Time difference of 4.6376 mins
+Time difference of 1.977642 hours
+[1] "Radar_Images/tiff/s_0081xx/s_00814001_tiff.tif"
+Time difference of 4.904018 mins
+Time difference of 1.98243 hours
+[1] "Radar_Images/tiff/s_0074xx/s_00745601_tiff.tif"
+Time difference of 5.061287 mins
+Time difference of 1.988306 hours
+[1] "Radar_Images/tiff/s_0362xx/s_03629501_tiff.tif"
+Time difference of 4.830606 mins
+Time difference of 1.989292 hours
+[1] "Radar_Images/tiff/s_0422xx/s_04227901_tiff.tif"
+Time difference of 5.091148 mins
+Time difference of 1.999487 hours
+[1] "Radar_Images/tiff/s_0436xx/s_04361601_tiff.tif"
+Time difference of 4.575648 mins
+Time difference of 2.000712 hours
+[1] "Radar_Images/tiff/s_0323xx/s_03230101_tiff.tif"
+Time difference of 4.627485 mins
+Time difference of 2.005274 hours
+[1] "Radar_Images/tiff/s_0449xx/s_04496301_tiff.tif"
+Time difference of 4.713018 mins
+Time difference of 2.009088 hours
+[1] "Radar_Images/tiff/s_0262xx/s_02624101_tiff.tif"
+Time difference of 4.666021 mins
+Time difference of 2.018298 hours
+[1] "Radar_Images/tiff/s_0379xx/s_03797601_tiff.tif"
+Time difference of 4.832999 mins
+Time difference of 2.032854 hours
+[1] "Radar_Images/tiff/s_0623xx/s_06239201_tiff.tif"
+Time difference of 4.779405 mins
+Time difference of 2.033382 hours
+[1] "Radar_Images/tiff/s_0069xx/s_00698801_tiff.tif"
+Time difference of 4.895601 mins
+Time difference of 2.039941 hours
+[1] "Radar_Images/tiff/s_0138xx/s_01389101_tiff.tif"
+Time difference of 4.751038 mins
+Time difference of 2.056827 hours
+[1] "Radar_Images/tiff/s_0568xx/s_05686403_tiff.tif"
+Time difference of 4.470902 mins
+Time difference of 2.056954 hours
+[1] "Radar_Images/tiff/s_0555xx/s_05556502_tiff.tif"
+Time difference of 4.668318 mins
+Time difference of 2.066115 hours
+[1] "Radar_Images/tiff/s_0376xx/s_03765102_tiff.tif"
+Time difference of 4.794432 mins
+Time difference of 2.0692 hours
+[1] "Radar_Images/tiff/s_0387xx/s_03871401_tiff.tif"
+Time difference of 4.615672 mins
+Time difference of 2.076429 hours
+[1] "Radar_Images/tiff/s_0389xx/s_03898501_tiff.tif"
+Time difference of 4.722305 mins
+Time difference of 2.079424 hours
+[1] "Radar_Images/tiff/s_0041xx/s_00413702_tiff.tif"
+Time difference of 4.767552 mins
+Time difference of 2.08474 hours
+[1] "Radar_Images/tiff/s_0565xx/s_05657401_tiff.tif"
+Time difference of 4.691535 mins
+Time difference of 2.087288 hours
+[1] "Radar_Images/tiff/s_0127xx/s_01273601_tiff.tif"
+Time difference of 4.694785 mins
+Time difference of 2.096545 hours
+[1] "Radar_Images/tiff/s_0078xx/s_00789902_tiff.tif"
+Time difference of 4.440015 mins
+Time difference of 2.106857 hours
+[1] "Radar_Images/tiff/s_0462xx/s_04626301_tiff.tif"
+Time difference of 4.730981 mins
+Time difference of 2.112235 hours
+[1] "Radar_Images/tiff/s_0328xx/s_03285901_tiff.tif"
+Time difference of 4.592516 mins
+Time difference of 2.116483 hours
+[1] "Radar_Images/tiff/s_0330xx/s_03303702_tiff.tif"
+Time difference of 4.415165 mins
+Time difference of 2.130414 hours
+[1] "Radar_Images/tiff/s_0078xx/s_00789302_tiff.tif"
+Time difference of 4.792018 mins
+Time difference of 2.136829 hours
+[1] "Radar_Images/tiff/s_0033xx/s_00331101_tiff.tif"
+Time difference of 4.55225 mins
+Time difference of 2.141987 hours
+[1] "Radar_Images/tiff/s_0459xx/s_04594201_tiff.tif"
+Time difference of 4.688015 mins
+Time difference of 2.147335 hours
+[1] "Radar_Images/tiff/s_0105xx/s_01055701_tiff.tif"
+Time difference of 4.547879 mins
+Time difference of 2.152228 hours
+[1] "Radar_Images/tiff/s_0079xx/s_00795601_tiff.tif"
+Time difference of 4.705145 mins
+Time difference of 2.157843 hours
+[1] "Radar_Images/tiff/s_0173xx/s_01738302_tiff.tif"
+Time difference of 4.615978 mins
+Time difference of 2.161675 hours
+[1] "Radar_Images/tiff/s_0369xx/s_03698502_tiff.tif"
+Time difference of 4.553911 mins
+Time difference of 2.163188 hours
+[1] "Radar_Images/tiff/s_0594xx/s_05944801_tiff.tif"
+Time difference of 4.67386 mins
+Time difference of 2.17445 hours
+[1] "Radar_Images/tiff/s_0503xx/s_05038901_tiff.tif"
+Time difference of 4.646828 mins
+Time difference of 2.184305 hours
+[1] "Radar_Images/tiff/s_0363xx/s_03632001_tiff.tif"
+Time difference of 4.708325 mins
+Time difference of 2.190713 hours
+[1] "Radar_Images/tiff/s_0280xx/s_02804001_tiff.tif"
+Time difference of 4.767893 mins
+Time difference of 2.195955 hours
+[1] "Radar_Images/tiff/s_0363xx/s_03638701_tiff.tif"
+Time difference of 4.681601 mins
+Time difference of 2.208442 hours
+[1] "Radar_Images/tiff/s_0065xx/s_00656202_tiff.tif"
+Time difference of 4.444325 mins
+Time difference of 2.210904 hours
+[1] "Radar_Images/tiff/s_0272xx/s_02725701_tiff.tif"
+Time difference of 4.549415 mins
+Time difference of 2.21782 hours
+[1] "Radar_Images/tiff/s_0255xx/s_02555502_tiff.tif"
+Time difference of 4.483432 mins
+Time difference of 2.222059 hours
+[1] "Radar_Images/tiff/s_0123xx/s_01234301_tiff.tif"
+Time difference of 4.624366 mins
+Time difference of 2.229322 hours
+[1] "Radar_Images/tiff/s_0558xx/s_05585101_tiff.tif"
+Time difference of 4.465889 mins
+Time difference of 2.232289 hours
+[1] "Radar_Images/tiff/s_0550xx/s_05507601_tiff.tif"
+Time difference of 4.710772 mins
+Time difference of 2.240188 hours
+[1] "Radar_Images/tiff/s_0344xx/s_03443301_tiff.tif"
+Time difference of 4.622457 mins
+Time difference of 2.240241 hours
+[1] "Radar_Images/tiff/s_0268xx/s_02684202_tiff.tif"
+Time difference of 4.923002 mins
+Time difference of 2.256506 hours
+[1] "Radar_Images/tiff/s_0075xx/s_00756102_tiff.tif"
+Time difference of 4.359206 mins
+Time difference of 2.25696 hours
+[1] "Radar_Images/tiff/s_0068xx/s_00684401_tiff.tif"
+Time difference of 4.514153 mins
+Time difference of 2.265951 hours
+[1] "Radar_Images/tiff/s_0038xx/s_00386301_tiff.tif"
+Time difference of 4.576257 mins
+Time difference of 2.272242 hours
+[1] "Radar_Images/tiff/s_0034xx/s_00348601_tiff.tif"
+Time difference of 4.231679 mins
+Time difference of 2.278973 hours
+[1] "Radar_Images/tiff/s_0360xx/s_03609002_tiff.tif"
+Time difference of 4.313792 mins
+Time difference of 2.282817 hours
+[1] "Radar_Images/tiff/s_0065xx/s_00655101_tiff.tif"
+Time difference of 4.556466 mins
+Time difference of 2.293763 hours
+[1] "Radar_Images/tiff/s_0556xx/s_05568902_tiff.tif"
+Time difference of 4.339599 mins
+Time difference of 2.294395 hours
+[1] "Radar_Images/tiff/s_0088xx/s_00885701_tiff.tif"
+Time difference of 4.479949 mins
+Time difference of 2.304023 hours
+[1] "Radar_Images/tiff/s_0248xx/s_02485101_tiff.tif"
+Time difference of 4.330448 mins
+Time difference of 2.304465 hours
+[1] "Radar_Images/tiff/s_0455xx/s_04553801_tiff.tif"
+Time difference of 4.474332 mins
+Time difference of 2.314814 hours
+[1] "Radar_Images/tiff/s_0047xx/s_00472502_tiff.tif"
+Time difference of 4.500565 mins
+Time difference of 2.315198 hours
+[1] "Radar_Images/tiff/s_0099xx/s_00994301_tiff.tif"
+Time difference of 4.272415 mins
+Time difference of 2.327714 hours
+[1] "Radar_Images/tiff/s_0407xx/s_04077401_tiff.tif"
+Time difference of 4.322148 mins
+Time difference of 2.328996 hours
+[1] "Radar_Images/tiff/s_0227xx/s_02275201_tiff.tif"
+Time difference of 4.374394 mins
+Time difference of 2.338858 hours
+[1] "Radar_Images/tiff/s_0369xx/s_03697101_tiff.tif"
+Time difference of 4.435593 mins
+Time difference of 2.34617 hours
+[1] "Radar_Images/tiff/s_0090xx/s_00907401_tiff.tif"
+Time difference of 4.307062 mins
+Time difference of 2.350766 hours
+[1] "Radar_Images/tiff/s_0322xx/s_03228601_tiff.tif"
+Time difference of 4.401527 mins
+Time difference of 2.356177 hours
+[1] "Radar_Images/tiff/s_0221xx/s_02217001_tiff.tif"
+Time difference of 4.4896 mins
+Time difference of 2.369275 hours
+[1] "Radar_Images/tiff/s_0072xx/s_00726002_tiff.tif"
+Time difference of 4.76158 mins
+Time difference of 2.373123 hours
+[1] "Radar_Images/tiff/s_0253xx/s_02532401_tiff.tif"
+Time difference of 4.361283 mins
+Time difference of 2.377154 hours
+[1] "Radar_Images/tiff/s_0349xx/s_03497501_tiff.tif"
+Time difference of 4.502283 mins
+Time difference of 2.37907 hours
+[1] "Radar_Images/tiff/s_0127xx/s_01273401_tiff.tif"
+Time difference of 4.357717 mins
+Time difference of 2.387828 hours
+[1] "Radar_Images/tiff/s_0358xx/s_03589202_tiff.tif"
+Time difference of 4.523735 mins
+Time difference of 2.39021 hours
+[1] "Radar_Images/tiff/s_0141xx/s_01410201_tiff.tif"
+Time difference of 4.351101 mins
+Time difference of 2.401516 hours
+[1] "Radar_Images/tiff/s_0079xx/s_00794102_tiff.tif"
+Time difference of 4.667736 mins
+Time difference of 2.40553 hours
+[1] "Radar_Images/tiff/s_0570xx/s_05702801_tiff.tif"
+Time difference of 4.463741 mins
+Time difference of 2.413259 hours
+[1] "Radar_Images/tiff/s_0042xx/s_00421001_tiff.tif"
+Time difference of 4.299212 mins
+Time difference of 2.417863 hours
+[1] "Radar_Images/tiff/s_0020xx/s_00202501_tiff.tif"
+Time difference of 4.033439 mins
+Time difference of 2.417991 hours
+[1] "Radar_Images/tiff/s_0075xx/s_00756702_tiff.tif"
+Time difference of 4.332004 mins
+Time difference of 2.428377 hours
+[1] "Radar_Images/tiff/s_0086xx/s_00867701_tiff.tif"
+Time difference of 4.429669 mins
+Time difference of 2.443104 hours
+[1] "Radar_Images/tiff/s_0379xx/s_03794902_tiff.tif"
+Time difference of 4.558734 mins
+Time difference of 2.449103 hours
+[1] "Radar_Images/tiff/s_0466xx/s_04668001_tiff.tif"
+Time difference of 4.464869 mins
+Time difference of 2.451571 hours
+[1] "Radar_Images/tiff/s_0330xx/s_03309301_tiff.tif"
+Time difference of 4.74392 mins
+Time difference of 2.458142 hours
+[1] "Radar_Images/tiff/s_0340xx/s_03409301_tiff.tif"
+Time difference of 4.463042 mins
+Time difference of 2.462317 hours
+[1] "Radar_Images/tiff/s_0342xx/s_03421501_tiff.tif"
+Time difference of 4.383729 mins
+Time difference of 2.463273 hours
+[1] "Radar_Images/tiff/s_0263xx/s_02634401_tiff.tif"
+Time difference of 4.373154 mins
+Time difference of 2.474403 hours
+[1] "Radar_Images/tiff/s_0240xx/s_02401301_tiff.tif"
+Time difference of 4.536717 mins
+Time difference of 2.481154 hours
+[1] "Radar_Images/tiff/s_0379xx/s_03799601_tiff.tif"
+Time difference of 4.629642 mins
+Time difference of 2.49042 hours
+[1] "Radar_Images/tiff/s_0375xx/s_03751801_tiff.tif"
+Time difference of 4.56836 mins
+Time difference of 2.494132 hours
+[1] "Radar_Images/tiff/s_0179xx/s_01792401_tiff.tif"
+Time difference of 4.83141 mins
+Time difference of 2.498387 hours
+[1] "Radar_Images/tiff/s_0378xx/s_03785502_tiff.tif"
+Time difference of 4.445611 mins
+Time difference of 2.502472 hours
+[1] "Radar_Images/tiff/s_0360xx/s_03603501_tiff.tif"
+Time difference of 4.631014 mins
+Time difference of 2.520289 hours
+[1] "Radar_Images/tiff/s_0519xx/s_05193201_tiff.tif"
+Time difference of 4.660064 mins
+Time difference of 2.529242 hours
+[1] "Radar_Images/tiff/s_0124xx/s_01247102_tiff.tif"
+Time difference of 5.052932 mins
+Time difference of 2.53332 hours
+[1] "Radar_Images/tiff/s_0388xx/s_03881101_tiff.tif"
+Time difference of 4.784255 mins
+Time difference of 2.53788 hours
+[1] "Radar_Images/tiff/s_0393xx/s_03936201_tiff.tif"
+Time difference of 4.535944 mins
+Time difference of 2.537918 hours
+[1] "Radar_Images/tiff/s_0216xx/s_02168601_tiff.tif"
+Time difference of 4.512409 mins
+Time difference of 2.538481 hours
+[1] "Radar_Images/tiff/s_0476xx/s_04763101_tiff.tif"
+Time difference of 4.037083 mins
+Time difference of 2.541689 hours
+[1] "Radar_Images/tiff/s_0077xx/s_00770301_tiff.tif"
+Time difference of 4.288725 mins
+Time difference of 2.552634 hours
+[1] "Radar_Images/tiff/s_0363xx/s_03633801_tiff.tif"
+Time difference of 4.425543 mins
+Time difference of 2.567892 hours
+[1] "Radar_Images/tiff/s_0075xx/s_00758401_tiff.tif"
+Time difference of 4.683458 mins
+Time difference of 2.568494 hours
+[1] "Radar_Images/tiff/s_0192xx/s_01929201_tiff.tif"
+Time difference of 4.461958 mins
+Time difference of 2.572754 hours
+[1] "Radar_Images/tiff/s_0032xx/s_00326302_tiff.tif"
+Time difference of 4.578358 mins
+Time difference of 2.578783 hours
+[1] "Radar_Images/tiff/s_0083xx/s_00839901_tiff.tif"
+Time difference of 4.021892 mins
+Time difference of 2.587321 hours
+[1] "Radar_Images/tiff/s_0066xx/s_00660301_tiff.tif"
+Time difference of 4.861102 mins
+Time difference of 2.610335 hours
+[1] "Radar_Images/tiff/s_0496xx/s_04962101_tiff.tif"
+Time difference of 4.57655 mins
+Time difference of 2.614198 hours
+[1] "Radar_Images/tiff/s_0558xx/s_05584001_tiff.tif"
+Time difference of 4.846458 mins
+Time difference of 2.614204 hours
+[1] "Radar_Images/tiff/s_0123xx/s_01237101_tiff.tif"
+Time difference of 4.368267 mins
+Time difference of 2.614502 hours
+[1] "Radar_Images/tiff/s_0561xx/s_05614601_tiff.tif"
+Time difference of 4.704583 mins
+Time difference of 2.616892 hours
+[1] "Radar_Images/tiff/s_0482xx/s_04829101_tiff.tif"
+Time difference of 4.741817 mins
+Time difference of 2.616917 hours
+[1] "Radar_Images/tiff/s_0164xx/s_01641501_tiff.tif"
+Time difference of 4.3451 mins
+Time difference of 2.625062 hours
+[1] "Radar_Images/tiff/s_0264xx/s_02642201_tiff.tif"
+Time difference of 4.08145 mins
+Time difference of 2.636519 hours
+[1] "Radar_Images/tiff/s_0249xx/s_02494801_tiff.tif"
+Time difference of 4.232134 mins
+Time difference of 2.638428 hours
+[1] "Radar_Images/tiff/s_0554xx/s_05540401_tiff.tif"
+Time difference of 4.448058 mins
+Time difference of 2.646888 hours
+[1] "Radar_Images/tiff/s_0358xx/s_03589001_tiff.tif"
+Time difference of 4.458162 mins
+Time difference of 2.653087 hours
+[1] "Radar_Images/tiff/s_0026xx/s_00267202_tiff.tif"
+Time difference of 4.26552 mins
+Time difference of 2.658414 hours
+[1] "Radar_Images/tiff/s_0065xx/s_00650001_tiff.tif"
+Time difference of 4.448385 mins
+Time difference of 2.684476 hours
+[1] "Radar_Images/tiff/s_0038xx/s_00386901_tiff.tif"
+Time difference of 4.214418 mins
+Time difference of 2.684743 hours
+[1] "Radar_Images/tiff/s_0119xx/s_01199802_tiff.tif"
+Time difference of 4.292668 mins
+Time difference of 2.685749 hours
+[1] "Radar_Images/tiff/s_0564xx/s_05644601_tiff.tif"
+Time difference of 4.353996 mins
+Time difference of 2.68946 hours
+[1] "Radar_Images/tiff/s_0395xx/s_03958501_tiff.tif"
+Time difference of 4.59831 mins
+Time difference of 2.690837 hours
+[1] "Radar_Images/tiff/s_0078xx/s_00783301_tiff.tif"
+Time difference of 4.535384 mins
+Time difference of 2.692508 hours
+[1] "Radar_Images/tiff/s_0622xx/s_06226201_tiff.tif"
+Time difference of 4.490753 mins
+Time difference of 2.699908 hours
+[1] "Radar_Images/tiff/s_0077xx/s_00771901_tiff.tif"
+Time difference of 4.150471 mins
+Time difference of 2.707623 hours
+[1] "Radar_Images/tiff/s_0216xx/s_02164901_tiff.tif"
+Time difference of 4.454755 mins
+Time difference of 2.710766 hours
+[1] "Radar_Images/tiff/s_0255xx/s_02552901_tiff.tif"
+Time difference of 4.315654 mins
+Time difference of 2.718817 hours
+[1] "Radar_Images/tiff/s_0268xx/s_02685201_tiff.tif"
+Time difference of 4.513449 mins
+Time difference of 2.728312 hours
+[1] "Radar_Images/tiff/s_0270xx/s_02706201_tiff.tif"
+Time difference of 4.363793 mins
+Time difference of 2.731155 hours
+[1] "Radar_Images/tiff/s_0057xx/s_00570501_tiff.tif"
+Time difference of 4.374542 mins
+Time difference of 2.757653 hours
+[1] "Radar_Images/tiff/s_0074xx/s_00741401_tiff.tif"
+Time difference of 4.474989 mins
+Time difference of 2.760333 hours
+[1] "Radar_Images/tiff/s_0170xx/s_01702301_tiff.tif"
+Time difference of 4.589437 mins
+Time difference of 2.760968 hours
+[1] "Radar_Images/tiff/s_0279xx/s_02797801_tiff.tif"
+Time difference of 4.438898 mins
+Time difference of 2.763443 hours
+[1] "Radar_Images/tiff/s_0041xx/s_00414901_tiff.tif"
+Time difference of 4.396073 mins
+Time difference of 2.764105 hours
+[1] "Radar_Images/tiff/s_0569xx/s_05698303_tiff.tif"
+Time difference of 4.391159 mins
+Time difference of 2.765694 hours
+[1] "Radar_Images/tiff/s_0321xx/s_03216001_tiff.tif"
+Time difference of 4.247366 mins
+Time difference of 2.770788 hours
+[1] "Radar_Images/tiff/s_0376xx/s_03767001_tiff.tif"
+Time difference of 4.185662 mins
+Time difference of 2.780553 hours
+[1] "Radar_Images/tiff/s_0072xx/s_00722402_tiff.tif"
+Time difference of 4.512072 mins
+Time difference of 2.782825 hours
+[1] "Radar_Images/tiff/s_0455xx/s_04555702_tiff.tif"
+Time difference of 4.408366 mins
+Time difference of 2.792291 hours
+[1] "Radar_Images/tiff/s_0104xx/s_01046701_tiff.tif"
+Time difference of 4.432481 mins
+Time difference of 2.802188 hours
+[1] "Radar_Images/tiff/s_0443xx/s_04433801_tiff.tif"
+Time difference of 4.357216 mins
+Time difference of 2.803794 hours
+[1] "Radar_Images/tiff/s_0133xx/s_01334601_tiff.tif"
+Time difference of 4.468652 mins
+Time difference of 2.832131 hours
+[1] "Radar_Images/tiff/s_0567xx/s_05676301_tiff.tif"
+Time difference of 4.686399 mins
+Time difference of 2.838441 hours
+[1] "Radar_Images/tiff/s_0262xx/s_02623701_tiff.tif"
+Time difference of 4.78033 mins
+Time difference of 2.840641 hours
+[1] "Radar_Images/tiff/s_0425xx/s_04252402_tiff.tif"
+Time difference of 4.770527 mins
+Time difference of 2.843618 hours
+[1] "Radar_Images/tiff/s_0040xx/s_00408901_tiff.tif"
+Time difference of 4.394237 mins
+Time difference of 2.844067 hours
+[1] "Radar_Images/tiff/s_0364xx/s_03648302_tiff.tif"
+Time difference of 4.859881 mins
+Time difference of 2.844443 hours
+[1] "Radar_Images/tiff/s_0239xx/s_02391601_tiff.tif"
+Time difference of 4.798481 mins
+Time difference of 2.845676 hours
+[1] "Radar_Images/tiff/s_0072xx/s_00720002_tiff.tif"
+Time difference of 4.119903 mins
+Time difference of 2.849219 hours
+[1] "Radar_Images/tiff/s_0061xx/s_00617303_tiff.tif"
+Time difference of 4.384557 mins
+Time difference of 2.855926 hours
+[1] "Radar_Images/tiff/s_0556xx/s_05564902_tiff.tif"
+Time difference of 4.116524 mins
+Time difference of 2.860901 hours
+[1] "Radar_Images/tiff/s_0260xx/s_02600301_tiff.tif"
+Time difference of 4.385779 mins
+Time difference of 2.876892 hours
+[1] "Radar_Images/tiff/s_0262xx/s_02623602_tiff.tif"
+Time difference of 4.583052 mins
+Time difference of 2.878585 hours
+[1] "Radar_Images/tiff/s_0359xx/s_03590501_tiff.tif"
+Time difference of 4.138924 mins
+Time difference of 2.901213 hours
+[1] "Radar_Images/tiff/s_0269xx/s_02699901_tiff.tif"
+Time difference of 4.675866 mins
+Time difference of 2.916373 hours
+[1] "Radar_Images/tiff/s_0176xx/s_01760601_tiff.tif"
+Time difference of 4.75466 mins
+Time difference of 2.919895 hours
+[1] "Radar_Images/tiff/s_0243xx/s_02430801_tiff.tif"
+Time difference of 4.597672 mins
+Time difference of 2.920262 hours
+[1] "Radar_Images/tiff/s_0167xx/s_01676601_tiff.tif"
+Time difference of 4.902909 mins
+Time difference of 2.926164 hours
+[1] "Radar_Images/tiff/s_0478xx/s_04781201_tiff.tif"
+Time difference of 4.839599 mins
+Time difference of 2.926337 hours
+[1] "Radar_Images/tiff/s_0340xx/s_03404101_tiff.tif"
+Time difference of 4.704959 mins
+Time difference of 2.92764 hours
+[1] "Radar_Images/tiff/s_0470xx/s_04702102_tiff.tif"
+Time difference of 4.309253 mins
+Time difference of 2.927844 hours
+[1] "Radar_Images/tiff/s_0281xx/s_02819501_tiff.tif"
+Time difference of 5.066626 mins
+Time difference of 2.928545 hours
+[1] "Radar_Images/tiff/s_0567xx/s_05672201_tiff.tif"
+Time difference of 4.361557 mins
+Time difference of 2.933595 hours
+[1] "Radar_Images/tiff/s_0359xx/s_03595001_tiff.tif"
+Time difference of 4.331516 mins
+Time difference of 2.949091 hours
+[1] "Radar_Images/tiff/s_0479xx/s_04791701_tiff.tif"
+Time difference of 4.564944 mins
+Time difference of 2.954668 hours
+[1] "Radar_Images/tiff/s_0367xx/s_03673003_tiff.tif"
+Time difference of 4.369573 mins
+Time difference of 2.97404 hours
+[1] "Radar_Images/tiff/s_0560xx/s_05609302_tiff.tif"
+Time difference of 4.441983 mins
+Time difference of 2.990407 hours
+[1] "Radar_Images/tiff/s_0371xx/s_03718802_tiff.tif"
+Time difference of 4.266096 mins
+Time difference of 2.991009 hours
+[1] "Radar_Images/tiff/s_0324xx/s_03243001_tiff.tif"
+Time difference of 4.757333 mins
+Time difference of 2.999555 hours
+[1] "Radar_Images/tiff/s_0129xx/s_01294201_tiff.tif"
+Time difference of 4.509621 mins
+Time difference of 3.003005 hours
+[1] "Radar_Images/tiff/s_0089xx/s_00894801_tiff.tif"
+Time difference of 4.731252 mins
+Time difference of 3.005192 hours
+[1] "Radar_Images/tiff/s_0381xx/s_03811201_tiff.tif"
+Time difference of 4.753924 mins
+Time difference of 3.005406 hours
+[1] "Radar_Images/tiff/s_0340xx/s_03403701_tiff.tif"
+Time difference of 4.67617 mins
+Time difference of 3.005578 hours
+[1] "Radar_Images/tiff/s_0253xx/s_02531301_tiff.tif"
+Time difference of 4.691161 mins
+Time difference of 3.006735 hours
+[1] "Radar_Images/tiff/s_0319xx/s_03195801_tiff.tif"
+Time difference of 4.399316 mins
+Time difference of 3.007019 hours
+[1] "Radar_Images/tiff/s_0440xx/s_04407601_tiff.tif"
+Time difference of 4.306207 mins
+Time difference of 3.020862 hours
+[1] "Radar_Images/tiff/s_0160xx/s_01605601_tiff.tif"
+Time difference of 4.464112 mins
+Time difference of 3.029071 hours
+[1] "Radar_Images/tiff/s_0453xx/s_04537403_tiff.tif"
+Time difference of 4.408889 mins
+Time difference of 3.047532 hours
+[1] "Radar_Images/tiff/s_0051xx/s_00515601_tiff.tif"
+Time difference of 4.386008 mins
+Time difference of 3.063508 hours
+[1] "Radar_Images/tiff/s_0332xx/s_03320201_tiff.tif"
+Time difference of 4.406329 mins
+Time difference of 3.064449 hours
+Time difference of 4.723908 mins
+Time difference of 3.078287 hours
+[1] "Radar_Images/tiff/s_0059xx/s_00591001_tiff.tif"
+Time difference of 4.420079 mins
+Time difference of 3.07886 hours
+[1] "Radar_Images/tiff/s_0619xx/s_06191501_tiff.tif"
+Time difference of 4.656161 mins
+Time difference of 3.080608 hours
+[1] "Radar_Images/tiff/s_0412xx/s_04128701_tiff.tif"
+Time difference of 4.51413 mins
+Time difference of 3.080814 hours
+Time difference of 4.825138 mins
+Time difference of 3.085826 hours
+[1] "Radar_Images/tiff/s_0446xx/s_04468901_tiff.tif"
+Time difference of 4.825377 mins
+Time difference of 3.087164 hours
+[1] "Radar_Images/tiff/s_0223xx/s_02234901_tiff.tif"
+Time difference of 4.816245 mins
+Time difference of 3.087291 hours
+[1] "Radar_Images/tiff/s_0501xx/s_05017201_tiff.tif"
+Time difference of 4.27688 mins
+Time difference of 3.092178 hours
+[1] "Radar_Images/tiff/s_0422xx/s_04221901_tiff.tif"
+Time difference of 4.25507 mins
+Time difference of 3.09999 hours
+Time difference of 3.892357 mins
+Time difference of 3.112405 hours
+Time difference of 3.62525 mins
+Time difference of 3.123929 hours
+Time difference of 3.378252 mins
+Time difference of 3.136915 hours
+Time difference of 3.53822 mins
+Time difference of 3.137259 hours
+Time difference of 3.53447 mins
+Time difference of 3.137769 hours
+[1] "Radar_Images/tiff/s_0077xx/s_00771802_tiff.tif"
+Time difference of 3.382913 mins
+Time difference of 3.142209 hours
+[1] "Radar_Images/tiff/s_0358xx/s_03586001_tiff.tif"
+Time difference of 3.295051 mins
+Time difference of 3.142209 hours
+[1] "Radar_Images/tiff/s_0259xx/s_02595401_tiff.tif"
+Time difference of 3.334701 mins
+Time difference of 3.142743 hours
+[1] "Radar_Images/tiff/s_0330xx/s_03308702_tiff.tif"
+Time difference of 3.166021 mins
+Time difference of 3.144946 hours
+Time difference of 2.436948 mins
+Time difference of 3.178389 hours
+Time difference of 2.356748 mins
+Time difference of 3.181488 hours
+Time difference of 2.327531 mins
+Time difference of 3.181535 hours
+Time difference of 2.386447 mins
+Time difference of 3.181983 hours
