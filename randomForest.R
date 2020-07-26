@@ -10,6 +10,7 @@ library(glcm)
 library(parallel)
 library(randomForest)
 
+library(corrgram)
 
 
 
@@ -20,7 +21,7 @@ library(randomForest)
 
 
 # Functions ----
-sampleTIF = function(n) {
+sampleTifClassification = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
   # NORMAL ----
@@ -36,16 +37,21 @@ sampleTIF = function(n) {
   sample_indices = sample(num, n)
   sampled = df3000[sample_indices,]
   
-  # REGRESSION ----
-  # Exclude areas with no shallow ice 
-  #df3000 = df[df$width > 3000 & df$depth != -32768,]
-  #num = nrow(df3000)
-  #sample_indices = sample(num, n)
-  #sampled = df3000[sample_indices,]
-  
   return(sampled)
 }
 
+sampleTifRegression = function(n) {
+  # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
+  
+  # REGRESSION ----
+  # Exclude areas with no shallow ice 
+  df3000 = df[df$width > 3000 & df$depth != -32768,]
+  num = nrow(df3000)
+  sample_indices = sample(num, n)
+  sampled = df3000[sample_indices,]
+  
+  return(sampled)
+}
 
 skewness2 = function(radar_mat) {
   # Given an image matrix, returns third color moment
@@ -59,7 +65,6 @@ skewness2 = function(radar_mat) {
   return(skewness)
 }
 
-
 relevantColumns = function(ncol, nwant) {
   # Given the number of columns and the number of wanted center columns,
   # return a vector with the indices of the wanted columns
@@ -69,7 +74,6 @@ relevantColumns = function(ncol, nwant) {
   selected = (bottom_cut + 1):(ncol - top_cut)
   return(selected)
 }
-
 
 getStatistics = function(radar_mat) {
   # Given a matrix, calculate mean, standard deviation, skewness, and kurtosis
@@ -82,7 +86,6 @@ getStatistics = function(radar_mat) {
   return(features)
 }
 
-
 replaceInf = function(x) {
   # Given an object, if it is infinite, turn it into NA
   if (is.infinite(x)) {
@@ -90,7 +93,6 @@ replaceInf = function(x) {
   }
   return(x)
 }
-
 
 getGLCM = function(radar_smol, window_size) {
   # Given a radargram, calculate the GLCM and return the feature statistics
@@ -107,7 +109,6 @@ getGLCM = function(radar_smol, window_size) {
   )
   return(stats)
 }
-
 
 extractFeatures = function(tif_path) {
   # Given file path to a .tif file, return a list of features
@@ -132,8 +133,6 @@ extractFeatures = function(tif_path) {
   #} else {
   #  features[1] = "yes"
   #}
-  
-  features[1] = tif_path
   
   # REGRESSION ----
   # shallow ice depth
@@ -165,7 +164,6 @@ extractFeatures = function(tif_path) {
   return(features)
 }
 
-
 extractIceClassification = function(tif_path) {
   # CLASSIFICATION
   # ice or not
@@ -176,8 +174,6 @@ extractIceClassification = function(tif_path) {
   }
   return(ice_or_not)
 }
-
-
 
 extractIceRegression = function(tif_path) {
   # REGRESSION
@@ -191,15 +187,21 @@ extractIceRegression = function(tif_path) {
 
 
 
+
+
+
+
 # Sample radargrams----
 n = 500
 global_i = 0
 global_n = n
 global_start_time = Sys.time()
 set.seed(23*3)
-sample = sampleTIF(n)
+#sample = sampleTifClassification(n)
+sample = sampleTifRegression(n)
 half1 = 1:(n/2)
 half2 = (n/2 + 1):n
+
 
 
 # PARALLEL???
@@ -216,7 +218,6 @@ stopCluster(cl)
 
 #features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
-features_df = features_df[, !(colnames(features_df) %in% "V1")]
 
 
 
@@ -236,18 +237,27 @@ colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 #write.csv(big, "big.csv")
 
+
+
+
+
+
+
+# TODO: NOTE: MAY OR MAY NOT BE NECESSARY DEPENDING ON HOW FEATURES LOOKS AFTERWARDS
+
 # convert to numeric
-for (name in feature_names) {
-  if (name == "ice") {
-    # REMOVE THIS LINE IF ICE COLUMN IS NUMERIC
-    #big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
-    next
-  }
-  print(name)
-  #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
-  big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
-}
-#write.csv(big, "big.csv")
+#for (name in feature_names) {
+#  if (name == "ice") {
+#    # REMOVE THIS LINE IF ICE COLUMN IS NUMERIC
+#    #big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
+#    next
+#  }
+#  print(name)
+#  #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
+#  big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
+#}
+#write.csv(big, "bigClassification.csv")
+write.csv(big, "bigRegression.csv")
 
 
 
@@ -278,9 +288,10 @@ relevant = relevantColumns(ncol(radar), 3000)
 e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
 # shrink the resolution by x20
-radar_smol = aggregate(radar_crop, fact=200)
-gray = glcm(radar_smol, window = c(3, 3))
-plot(gray)
+radar_smol = aggregate(radar_crop, fact=2)
+#gray = glcm(radar_smol, window = c(3, 3))
+#plot(gray)
+corrgram(as.matrix(radar_smol))
 
 end.time <- Sys.time()
 time.taken <- end.time - start.time
