@@ -1,8 +1,4 @@
-# Set Up ----
-df = read.csv("radar.csv", stringsAsFactors = FALSE)
-df = df[, !(colnames(df) %in% "X")]
-bad = c("Radar_Images/tiff/s_0240xx/s_02407601_tiff.tif", "Radar_Images/tiff/s_0564xx/s_05645702_tiff.tif")
-df = df[!(df$tif %in% bad),]
+# Libraries ----
 
 library(raster)
 library(e1071)
@@ -10,7 +6,11 @@ library(glcm)
 library(parallel)
 library(randomForest)
 
-library(corrgram)
+# Global Variables ----
+df = read.csv("radar.csv", stringsAsFactors = FALSE)
+df = df[, !(colnames(df) %in% "X")]
+bad = c("Radar_Images/tiff/s_0240xx/s_02407601_tiff.tif", "Radar_Images/tiff/s_0564xx/s_05645702_tiff.tif")
+df = df[!(df$tif %in% bad),]
 
 
 
@@ -190,7 +190,6 @@ extractIceRegression = function(tif_path) {
 
 
 
-
 # Sample radargrams----
 n = 500
 global_i = 0
@@ -249,6 +248,7 @@ big = features_df[, colnames(features_df) %in% feature_names]
 #for (name in feature_names) {
 #  if (name == "ice") {
 #    # REMOVE THIS LINE IF ICE COLUMN IS NUMERIC
+#    # Need this format because can't do big$name or something
 #    #big[, colnames(big) %in% name] = as.factor(big[, colnames(big) %in% name])
 #    next
 #  }
@@ -257,7 +257,7 @@ big = features_df[, colnames(features_df) %in% feature_names]
 #  big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
 #}
 #write.csv(big, "bigClassification.csv")
-write.csv(big, "bigRegression.csv")
+#write.csv(big, "bigRegression.csv")
 
 
 
@@ -279,23 +279,40 @@ round(importance(big_rf), 2)
 
 
 
+
+
+
 # Testing ----
 start.time <- Sys.time()
 
 radar = raster("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
+
 # crop by selecting middle 3000
 relevant = relevantColumns(ncol(radar), 3000)
 e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
-# shrink the resolution by x20
-radar_smol = aggregate(radar_crop, fact=2)
-#gray = glcm(radar_smol, window = c(3, 3))
-#plot(gray)
-corrgram(as.matrix(radar_smol))
+
+# shrink the resolution by x2 and x200
+radar_smol = aggregate(radar_crop, fact = 2)
+radar_smol2 = aggregate(radar_crop, fact = 200)
+
+# three types
+gray1 = glcm(radar_smol, window = c(3, 3))
+gray2 = glcm(radar_smol2, window = c(3, 3))
+gray3 = glcm(radar_smol, window = c(9, 9))
+plot(gray1)
+plot(gray3)
+plot(gray2)
 
 end.time <- Sys.time()
 time.taken <- end.time - start.time
 time.taken
+
+
+
+
+
+
 
 
 
