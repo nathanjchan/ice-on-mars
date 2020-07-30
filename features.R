@@ -5,15 +5,11 @@ library(e1071)
 library(glcm)
 library(parallel)
 library(randomForest)
-
-# Functions ----
 source("functions.R")
 
 # Global Variables ----
 df = read.csv("radar.csv", stringsAsFactors = FALSE)
 df = df[, !(colnames(df) %in% "X")]
-bad = scan("bad.txt", what = "", sep = "\n")
-df = df[!(df$tif %in% bad),]
 
 
 
@@ -21,13 +17,13 @@ df = df[!(df$tif %in% bad),]
 
 
 # Sample ----
-n = 500
+n = 1000
 global_i = 0
 global_n = n
 global_start_time = Sys.time()
 set.seed(23*3)
-#sample = sampleTifClassification(n)
-sample = sampleTifRegression(n)
+sample = sampleTifClassification(n)
+#sample = sampleTifRegression(n)
 half1 = 1:(n/2)
 half2 = (n/2 + 1):n
 
@@ -42,6 +38,7 @@ clusterEvalQ(cl, {
   library(raster)
   library(e1071)
   library(glcm)
+  rasterOptions(tmpdir = "D:/Mars_Data/__raster__/")
 })
 features = parLapply(cl, sample$tif, extractFeatures)
 stopCluster(cl)
@@ -51,8 +48,8 @@ stopCluster(cl)
 features_df = as.data.frame(do.call(rbind, features))
 
 # get labels
-#ice = lapply(sample$tif, extractIceClassification)
-ice = lapply(sample$tif, extractIceRegression)
+ice = lapply(sample$tif, extractIceClassification)
+# ice = lapply(sample$tif, extractIceRegression)
 ice_df = as.data.frame(do.call(rbind, ice))
 features_df = cbind(ice_df, features_df)
 
@@ -65,7 +62,8 @@ if (num_features != ncol(features_df)) {
 colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 
-
+big$ice = as.factor(big$ice)
+write.csv(big, "bigClassification.csv")
 
 
 
@@ -87,7 +85,6 @@ big = features_df[, colnames(features_df) %in% feature_names]
 #  #big[, colnames(big) %in% name] = as.numeric(levels(big[, colnames(big) %in% name]))[big[, colnames(big) %in% name]]
 #  big[, colnames(big) %in% name] = as.numeric(big[, colnames(big) %in% name])
 #}
-#write.csv(big, "bigClassification.csv")
 #write.csv(big, "bigRegression.csv")
 
 
