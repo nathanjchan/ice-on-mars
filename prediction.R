@@ -22,8 +22,8 @@ n = nrow(big)
 half1 = 1:(n/2)
 half2 = (n/2 + 1):n
 
-x = big[,2:num_features]
-#x = big[,31:num_features] # use only GLCM features
+# x = big[,2:num_features]
+x = big[,31:num_features] # use only GLCM features
 y = big[,1]
   
 x_train = x[half1,]
