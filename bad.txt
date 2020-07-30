@@ -1,6 +1,0 @@
-Radar_Images/tiff/s_0240xx/s_02407601_tiff.tif
-Radar_Images/tiff/s_0564xx/s_05645702_tiff.tif
-Radar_Images/tiff/s_0055xx/s_00553001_tiff.tif
-Radar_Images/tiff/s_0312xx/s_03121201_tiff.tif
-Radar_Images/tiff/s_0088xx/s_00888201_tiff.tif
-Radar_Images/tiff/s_0030xx/s_00309402_tiff.tif
