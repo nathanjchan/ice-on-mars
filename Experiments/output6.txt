@@ -1,6 +1,3 @@
-Notes:
-- For some reason, required almost 20GB of disk space to run
-
 starting worker pid=9584 on localhost:11430 at 21:53:12.792
 starting worker pid=9268 on localhost:11430 at 21:53:12.793
 starting worker pid=13596 on localhost:11430 at 21:53:12.795
