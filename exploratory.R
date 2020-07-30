@@ -4,6 +4,7 @@ long = read.table("Subsurface_Ice/Lon.ascii")
 lat = read.table("Subsurface_Ice/Lat.ascii")
 
 
+
 # Functions ----
 parseCoords = function(file_path) {
   # Given path to a .lbl file of a radargram, return the coordinates of the area
@@ -14,7 +15,6 @@ parseCoords = function(file_path) {
   lat_end = as.numeric(strsplit(strsplit(text[23], " = ")[[1]][2], " <")[[1]][1])
   return(c(long_start, long_end, lat_start, lat_end))
 }
-
 
 meanCoords = function(coords) {
   # Given coordinates to a rectangular area of a radargram, return the center of the area
@@ -53,7 +53,6 @@ meanCoords = function(coords) {
   return(c(long_coord, lat_coord))
 }
 
-
 areaCoords = function(coords) {
   # Given coordinates to a rectangular area of a radargram, return the area of the area
   # NOTE: uses global df
@@ -77,7 +76,6 @@ areaCoords = function(coords) {
   area = width * length
   return(area)
 }
-
 
 getDepthCoords = function(coords) {
   # Given coordinates to a rectangular area of a radargram, return the depth based on Piqueux et al 2019
@@ -114,7 +112,6 @@ getDepthCoords = function(coords) {
   return(depth)
 }
 
-
 getDepthFile = function(file_path) {
   # Given a path to a .lbl file of a radargram, return the depth of the subsurface ice
   coords = parseCoords(file_path)
@@ -122,7 +119,6 @@ getDepthFile = function(file_path) {
   #print(paste0("Depth: ", d))
   return(d)
 }
-
 
 numFiles = function(folder, extension) {
   # Given a file extension,
@@ -141,7 +137,6 @@ numFiles = function(folder, extension) {
   }
   return(count)
 }
-
 
 allFiles = function(folder, extension) {
   # Given a file extension,
@@ -163,7 +158,6 @@ allFiles = function(folder, extension) {
   return(files)
 }
 
-
 sampleFiles = function(n, extension) {
   # Given sample size n, return a simple random sample of file paths with given extension
   num = numFiles("tiff", extension)
@@ -172,7 +166,6 @@ sampleFiles = function(n, extension) {
   sampled = population[sample_i]
   return(sampled)
 }
-
 
 interTabLong = function(file_path) {
   # Given a path to a .tab file, return whether the longitude is increasing or decreasing
@@ -185,8 +178,8 @@ interTabLong = function(file_path) {
   return("decreasing")
 }
 
-
 interTabLat = function(file_path) {
+  # Given a path to a .tab file, return whether the latitude is increasing or decreasing
   file_lines = readLines(file_path)
   lat_one = as.numeric(strsplit(file_lines[1], ",")[[1]][3])
   lat_two = as.numeric(strsplit(file_lines[2], ",")[[1]][3])
@@ -195,7 +188,6 @@ interTabLat = function(file_path) {
   }
   return("decreasing")
 }
-
 
 radarWidth = function(tif_path) {
   # Given a file path to a .tif file, return the number of columns of the raster
@@ -207,6 +199,7 @@ radarWidth = function(tif_path) {
 }
 
 
+
 # Testing ----
 getDepthFile("Radar_Images/tiff/s_0025xx/s_00258001_tiff.lbl")
 sample = sampleFiles(100, "tif")
@@ -214,6 +207,7 @@ sample = sampleFiles(100, "tif")
 
 interTabLong("Radar_Images/geom/s_0016xx/s_00168901_geom.tab")
 interTabLat("Radar_Images/geom/s_0016xx/s_00168901_geom.tab")
+
 
 
 # Giant data frame ----
@@ -256,6 +250,7 @@ widths_df = do.call(rbind, widths)
 colnames(widths_df) = "width"
 df = cbind(df, widths_df)
 write.csv(df, "radar.csv")
+
 
 
 # Global coverage ----
