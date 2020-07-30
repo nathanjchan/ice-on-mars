@@ -4,6 +4,7 @@ Notes:
 - Test error: 10%
 - Took about 2 hours and 15 minutes with 12 cores parallel processing
     - Without the worry for time, this opens up many more opportunities for possible computations
+    - But for some reason, required almost 20GB of disk space to run
 - Best experiment so far
 - Features included 4 color statistics, color histogram, and 4 statistics for 3 varations of the 8 GLCM features (96 total)
 - GLCM features calculated 3 times:
