@@ -1,8 +1,6 @@
 # Libraries ----
 
 library(corrgram)
-
-# Functions ----
 source("functions.R")
 
 # Global Variables ----
@@ -14,7 +12,7 @@ df = df[!(df$tif %in% bad),]
 
 
 # Feature Extraction ----
-n = 500
+n = 1000
 global_i = 0
 global_n = n
 global_start_time = Sys.time()
@@ -68,15 +66,18 @@ e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
 
 # shrink the resolution by x50
-radar_smol2 = aggregate(radar_crop, fact = 50)
+# radar_smol2 = aggregate(radar_crop, fact = 50)
+# 
+# corr_all = c()
+# corr = corrgram(as.matrix(radar_smol2))
+# for (i in 1:nrow(corr)) {
+#   for (j in 1:i) {
+#     corr_all = append(corr_all, corr[i, j])
+#   }
+# }
 
-test = c()
-corr = corrgram(as.matrix(radar_smol2))
-for (i in 1:nrow(corr)) {
-  for (j in 1:i) {
-    test = append(test, corr[i, j])
-  }
-}
+
+
 
 end.time <- Sys.time()
 time.taken <- end.time - start.time
