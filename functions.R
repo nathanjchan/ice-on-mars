@@ -18,7 +18,7 @@ sampleTifClassification = function(n) {
   
   # CLASSIFICATION ----
   # Include radargrams with width > 3000
-  df3000 = df[df$width > 3000,]
+  df3000 = df[df$width > 3000 & df$corrupt != "bad",]
   num = nrow(df3000)
   sample_indices = sample(num, n)
   sampled = df3000[sample_indices,]
@@ -33,7 +33,7 @@ sampleTifRegression = function(n) {
   
   # REGRESSION ----
   # Exclude areas with no shallow ice 
-  df3000 = df[df$width > 3000 & df$depth != -32768,]
+  df3000 = df[df$width > 3000 & df$depth != -32768 & df$corrupt != "bad",]
   num = nrow(df3000)
   sample_indices = sample(num, n)
   sampled = df3000[sample_indices,]
@@ -121,22 +121,10 @@ extractFeatures = function(tif_path) {
   radar_mat = as.matrix(radar_crop)
   
   # CHANGE RESOLUTION
-  radar_smol = aggregate(radar_crop, fact=2)
-  radar_smol2 = aggregate(radar_crop, fact=200)
+  radar_smol2 = aggregate(radar_crop, fact=2)
+  radar_smol200 = aggregate(radar_crop, fact=200)
   
   features = c()
-  
-  # CLASSIFICATION ----
-  # ice or not
-  #if (df$depth[df$tif == tif_path] == -32768) {
-  #  features[1] = "no"
-  #} else {
-  #  features[1] = "yes"
-  #}
-  
-  # REGRESSION ----
-  # shallow ice depth
-  #features[1] = df$depth[df$tif == tif_path]
   
   # COLOR STATISTICS ----
   features = append(features, getStatistics(radar_mat))
@@ -146,9 +134,9 @@ extractFeatures = function(tif_path) {
   features = append(features, color_hist$density) # density instead of counts
   
   # GRAY LEVEL CO-OCCURRANCE MATRIX ----
-  stats1 = getGLCM(radar_smol, window_size = 3)
-  stats2 = getGLCM(radar_smol2, window_size = 3)
-  stats3 = getGLCM(radar_smol, window_size = 9)
+  stats1 = getGLCM(radar_smol2, window_size = 3)
+  stats2 = getGLCM(radar_smol2, window_size = 9)
+  stats3 = getGLCM(radar_smol200, window_size = 3)
   features = append(features, stats1)
   features = append(features, stats2)
   features = append(features, stats3)
@@ -203,12 +191,12 @@ extractFeatures2 = function(tif_path) {
   radar_smol = aggregate(radar_crop, fact=50)
   
   # CORRGRAM ----
-  # corr = corrgram(as.matrix(radar_smol))
-  # for (i in 1:nrow(corr)) {
-  #   for (j in 1:i) {
-  #     features = append(features, corr[i, j])
-  #   }
-  # }
+  corr = corrgram(as.matrix(radar_smol))
+  for (i in 1:nrow(corr)) {
+    for (j in 1:i) {
+      features = append(features, corr[i, j])
+    }
+  }
   
   # END ----
   end_time = Sys.time()
