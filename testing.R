@@ -1,4 +1,5 @@
 library(randomForest)
+library(raster)
 
 
 # Classification ----
@@ -63,3 +64,36 @@ train <- rbind(iris3[,,1], iris3[,,2], iris3[,,3])
 cl <- factor(c(rep("s",50), rep("c",50), rep("v",50)))
 knn.cv(train, cl, k = 3, prob = TRUE)
 attributes(.Last.value)
+
+
+
+# NORMAL ----
+# Sample from all radargrams
+#num = nrow(df)
+#sample_indices = sample(num, n)
+#sampled = df[sample_indices,]
+
+
+
+# CORRGRAM ----
+# use 50x shrinked resolution
+# corr = corrgram(as.matrix(radar_smol))
+# for (i in 1:nrow(corr)) {
+#   for (j in 1:i) {
+#     features = append(features, corr[i, j])
+#   }
+# }
+
+
+
+# Density ----
+
+# crop by selecting middle 3000
+radar = raster("Radar_Images/tiff/s_0357xx/s_03576301_tiff.tif")
+relevant = relevantColumns(ncol(radar), 3000)
+e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
+radar_crop = crop(radar, e)
+radar_mat = as.matrix(radar_crop)
+
+test = length(radar_mat[radar_mat > 128])
+

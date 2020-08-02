@@ -10,14 +10,7 @@ library(glcm)
 sampleTifClassification = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
-  # NORMAL ----
-  # Sample from all radargrams
-  #num = nrow(df)
-  #sample_indices = sample(num, n)
-  #sampled = df[sample_indices,]
-  
-  # CLASSIFICATION ----
-  # Include radargrams with width > 3000
+  # classification: include radargrams with width > 3000
   df3000 = df[df$width > 3000 & df$corrupt != "bad",]
   num = nrow(df3000)
   sample_indices = sample(num, n)
@@ -31,8 +24,7 @@ sampleTifClassification = function(n) {
 sampleTifRegression = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
-  # REGRESSION ----
-  # Exclude areas with no shallow ice 
+  # regression: exclude areas with no shallow ice 
   df3000 = df[df$width > 3000 & df$depth != -32768 & df$corrupt != "bad",]
   num = nrow(df3000)
   sample_indices = sample(num, n)
@@ -45,7 +37,7 @@ sampleTifRegression = function(n) {
 
 skewness2 = function(radar_mat) {
   # Given an image matrix, returns third color moment
-  # NOTE: doesn't work sometimes because it exceeds color capacity
+  # NOTE: doesn't work sometimes because it exceeds integer capacity
   mu = mean(radar_mat)
   skewness = 0
   for (f in radar_mat) {
@@ -58,8 +50,7 @@ skewness2 = function(radar_mat) {
 
 
 relevantColumns = function(ncol, nwant) {
-  # Given the number of columns and the number of wanted center columns,
-  # return a vector with the indices of the wanted columns
+  # Given the # columns and # wanted center columns, return a vector with the indices of the wanted columns
   cut = (ncol - nwant) / 2
   top_cut = floor(cut)
   bottom_cut = ceiling(cut)
@@ -70,8 +61,7 @@ relevantColumns = function(ncol, nwant) {
 
 
 getStatistics = function(radar_mat) {
-  # Given a matrix, calculate mean, standard deviation, skewness, and kurtosis
-  # and return them in a list
+  # Given a matrix, calculate statistics, and return them in a list
   features = c()
   features[1] = mean(radar_mat, na.rm=TRUE)
   features[2] = sd(radar_mat, na.rm=TRUE)
@@ -112,36 +102,43 @@ getGLCM = function(radar_smol, window_size) {
 
 extractFeatures = function(tif_path) {
   # Given file path to a .tif file, return a list of features
+  
+  # set up
   print(tif_path)
   start_time = Sys.time()
+  
+  # read and crop radar
   radar = raster(tif_path)
   relevant = relevantColumns(ncol(radar), 3000)
   e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
   
-  # CHANGE RESOLUTION
+  # change resolution
   radar_smol2 = aggregate(radar_crop, fact=2)
-  radar_smol200 = aggregate(radar_crop, fact=200)
   
+  # vector for return
   features = c()
   
-  # COLOR STATISTICS ----
+  # color statistics
   features = append(features, getStatistics(radar_mat))
   
-  # COLOR HISTOGRAM ----
+  # density
+  features = append(features, getDensity(radar_mat))
+  
+  # color histogram
   color_hist = hist(radar_mat, breaks = seq(0, 255, l = 26))
   features = append(features, color_hist$density) # density instead of counts
   
-  # GRAY LEVEL CO-OCCURRANCE MATRIX ----
-  stats1 = getGLCM(radar_smol2, window_size = 3)
-  stats2 = getGLCM(radar_smol2, window_size = 9)
-  stats3 = getGLCM(radar_smol200, window_size = 3)
-  features = append(features, stats1)
-  features = append(features, stats2)
-  features = append(features, stats3)
+  # gray level co-occurrance matrix
+  features = append(features, getGLCM(radar_smol2, window_size = 3))
+  features = append(features, getGLCM(radar_smol2, window_size = 7))
+  features = append(features, getGLCM(radar_smol2, window_size = 15))
+  features = append(features, getGLCM(radar_smol2, window_size = 31))
+  features = append(features, getGLCM(radar_smol2, window_size = 63))
+  features = append(features, getGLCM(radar_smol2, window_size = 127))
   
-  # END ----
+  # end
   end_time = Sys.time()
   time_taken = end_time - start_time
   total_time_taken = end_time - global_start_time
@@ -155,8 +152,7 @@ extractFeatures = function(tif_path) {
 
 
 extractIceClassification = function(tif_path) {
-  # CLASSIFICATION
-  # ice or not
+  # classification: ice or not
   if (df$depth[df$tif == tif_path] == -32768) {
     ice_or_not = "no"
   } else {
@@ -168,37 +164,33 @@ extractIceClassification = function(tif_path) {
 
 
 extractIceRegression = function(tif_path) {
-  # REGRESSION
-  # shallow ice depth
+  # regression: shallow ice depth
   ice_depth = df$depth[df$tif == tif_path]
   return(ice_depth)
 }
 
 
 
+# Work in progress function ----
 extractFeatures2 = function(tif_path) {
+  # set up
   print(tif_path)
   start_time = Sys.time()
+  
+  # read and crop radar
   radar = raster(tif_path)
   relevant = relevantColumns(ncol(radar), 3000)
   e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
   
+  # list for return
   features = c()
+
+  # density
+  features = append(features, getDensity(radar_mat))
   
-  # CHANGE RESOLUTION ----
-  radar_smol = aggregate(radar_crop, fact=50)
-  
-  # CORRGRAM ----
-  corr = corrgram(as.matrix(radar_smol))
-  for (i in 1:nrow(corr)) {
-    for (j in 1:i) {
-      features = append(features, corr[i, j])
-    }
-  }
-  
-  # END ----
+  # end
   end_time = Sys.time()
   time_taken = end_time - start_time
   total_time_taken = end_time - global_start_time
@@ -207,4 +199,16 @@ extractFeatures2 = function(tif_path) {
   print(total_time_taken)
   #print(paste0(global_i, "/", global_n))
   return(features)
+}
+
+
+
+getDensity = function(radar_mat) {
+  mass = sum(radar_mat[radar_mat > 128])
+  volume = length(radar_mat[radar_mat > 128])
+  if (volume == 0) {
+    return(0)
+  }
+  density = mass / volume
+  return(density)
 }

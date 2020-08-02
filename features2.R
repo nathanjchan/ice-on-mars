@@ -1,17 +1,21 @@
 # Libraries ----
 
-library(corrgram)
+library(parallel)
 source("functions.R")
 
 # Global Variables ----
 df = read.csv("radar.csv", stringsAsFactors = FALSE)
 df = df[, !(colnames(df) %in% "X")]
-bad = scan("bad.txt", what = "", sep = "\n")
-df = df[!(df$tif %in% bad),]
 
 
 
-# Feature Extraction ----
+
+
+
+
+
+
+# Sample ----
 n = 1000
 global_i = 0
 global_n = n
@@ -27,17 +31,16 @@ half2 = (n/2 + 1):n
 # Parallelization
 num_cores = detectCores()
 cl = makeCluster(num_cores, outfile = "output.txt")
-clusterExport(cl, varlist = c("relevantColumns", "global_start_time"))
+clusterExport(cl, varlist = c("relevantColumns", "getDensity", "global_start_time"))
 clusterEvalQ(cl, {
   library(raster)
-  library(corrgram)
 })
 features2 = parLapply(cl, sample$tif, extractFeatures2)
 stopCluster(cl)
 
 features_df2 = as.data.frame(do.call(rbind, features2))
 
-feature_names2 = paste0("corr", 1:1830)
+feature_names2 = c("density")
 num_features2 = length(feature_names2)
 if (num_features2 != ncol(features_df2)) {
   stop("Number of feature names and number of features don't match!")
@@ -64,19 +67,6 @@ radar = raster("Radar_Images/tiff/s_0055xx/s_00553001_tiff.tif")
 relevant = relevantColumns(ncol(radar), 3000)
 e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
-
-# shrink the resolution by x50
-# radar_smol2 = aggregate(radar_crop, fact = 50)
-# 
-# corr_all = c()
-# corr = corrgram(as.matrix(radar_smol2))
-# for (i in 1:nrow(corr)) {
-#   for (j in 1:i) {
-#     corr_all = append(corr_all, corr[i, j])
-#   }
-# }
-
-
 
 
 end.time <- Sys.time()

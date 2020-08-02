@@ -6,16 +6,21 @@ library(class)
 
 
 
+
+
+
+
+
+
 # Random Forest ----
 
 big = read.csv("bigClassification.csv")
 big = big[, !(colnames(big) %in% "X")]
 big$ice = as.factor(big$ice)
 
-# big2 = read.csv("bigClassification2.csv")
-# big2 = big2[, !(colnames(big2) %in% "X")]
-# big = cbind(big, big2)
-# big = big[-c(242, 337, 341, 418),] # TODO: DROP THEM FROM THE DF
+#big2 = read.csv("bigClassification2.csv")
+#big2 = big2[, !(colnames(big2) %in% "X")]
+#big = cbind(big, big2)
 
 num_features = ncol(big)
 n = nrow(big)
@@ -23,7 +28,8 @@ half1 = 1:(n/2)
 half2 = (n/2 + 1):n
 
 # x = big[,2:num_features]
-x = big[,31:num_features] # use only GLCM features
+# x = big[,32:num_features] # use only GLCM features
+x = big[,32:127]
 y = big[,1]
   
 x_train = x[half1,]

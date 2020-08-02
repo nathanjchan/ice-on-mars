@@ -17,7 +17,7 @@ df = df[, !(colnames(df) %in% "X")]
 
 
 # Sample ----
-n = 1000
+n = 500
 global_i = 0
 global_n = n
 global_start_time = Sys.time()
@@ -33,7 +33,8 @@ half2 = (n/2 + 1):n
 # parallel computing
 num_cores = detectCores()
 cl = makeCluster(num_cores, outfile = "output.txt")
-clusterExport(cl, varlist = c("relevantColumns", "getStatistics", "replaceInf", "getGLCM", "global_start_time"))
+clusterExport(cl, varlist = c("relevantColumns", "getStatistics", "replaceInf",
+                              "getGLCM", "getDensity", "global_start_time"))
 clusterEvalQ(cl, {
   library(raster)
   library(e1071)
@@ -54,7 +55,7 @@ ice_df = as.data.frame(do.call(rbind, ice))
 features_df = cbind(ice_df, features_df)
 
 # rename features
-feature_names = c("ice", "mean", "sd", "skew", "kurt", paste0("color_hist", 1:25), paste0("glcm", 1:96))
+feature_names = c("ice", "mean", "sd", "skew", "kurt", "density", paste0("color_hist", 1:25), paste0("glcm", 1:192))
 num_features = length(feature_names)
 if (num_features != ncol(features_df)) {
   stop("Number of feature names and number of features don't match!")
@@ -121,16 +122,25 @@ e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
 radar_crop = crop(radar, e)
 
 # shrink the resolution by x2 and x200
-radar_smol = aggregate(radar_crop, fact = 2)
-radar_smol2 = aggregate(radar_crop, fact = 200)
+radar_smol2 = aggregate(radar_crop, fact = 2)
+# radar_smol200 = aggregate(radar_crop, fact = 200)
 
 # three types
-gray1 = glcm(radar_smol, window = c(3, 3))
-gray2 = glcm(radar_smol2, window = c(3, 3))
-gray3 = glcm(radar_smol, window = c(9, 9))
+gray1 = glcm(radar_smol2, window = c(3, 3))
+gray2 = glcm(radar_smol2, window = c(7, 7))
+gray3 = glcm(radar_smol2, window = c(15, 15))
+gray4 = glcm(radar_smol2, window = c(31, 31))
+gray5 = glcm(radar_smol2, window = c(63, 63))
+gray6 = glcm(radar_smol2, window = c(127, 127))
+# gray4 = glcm(radar_smol200, window = c(3, 3), shift = list(c(0,1), c(1,1), c(1,0), c(1,-1)))
+# gray5 = glcm(radar_smol200, window = c(7, 7), shift = list(c(0,1), c(1,1), c(1,0), c(1,-1)))
+# gray6 = glcm(radar_smol200, window = c(15, 15), shift = list(c(0,1), c(1,1), c(1,0), c(1,-1)))
 plot(gray1)
-plot(gray3)
 plot(gray2)
+plot(gray3)
+plot(gray4)
+plot(gray5)
+plot(gray6)
 
 end.time <- Sys.time()
 time.taken <- end.time - start.time
