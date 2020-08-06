@@ -24,9 +24,9 @@ global_start_time = Sys.time()
 set.seed(23*3)
 sample = sampleTifClassification(n)
 #sample = sampleTifRegression(n)
+# write.csv(sample, "sample.csv")
 half1 = 1:(n/2)
 half2 = (n/2 + 1):n
-
 
 
 # Feature Extraction ----
@@ -44,6 +44,10 @@ clusterEvalQ(cl, {
 features = parLapply(cl, sample$tif, extractFeatures)
 stopCluster(cl)
 
+# # normal computing
+rasterOptions(tmpdir = "D:/Mars_Data/__raster__/")
+features = lapply(sample$tif, extractFeatures2)
+
 # create data frame
 #features = lapply(sample$tif, extractFeatures)
 features_df = as.data.frame(do.call(rbind, features))
@@ -55,7 +59,8 @@ ice_df = as.data.frame(do.call(rbind, ice))
 features_df = cbind(ice_df, features_df)
 
 # rename features
-feature_names = c("ice", "mean", "sd", "skew", "kurt", "density", paste0("color_hist", 1:25), paste0("glcm", 1:192))
+# feature_names = c("ice", "mean", "sd", "skew", "kurt", "density", paste0("color_hist", 1:25), paste0("glcm", 1:192))
+feature_names = c("ice", paste0("glcm", 1:64))
 num_features = length(feature_names)
 if (num_features != ncol(features_df)) {
   stop("Number of feature names and number of features don't match!")
