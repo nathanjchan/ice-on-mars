@@ -1,0 +1,597 @@
+starting worker pid=9116 on localhost:11824 at 03:04:10.497
+
+starting worker pid=2940 on localhost:11824 at 03:04:10.493
+
+starting worker pid=6632 on localhost:11824 at 03:04:10.502
+starting worker pid=14580 on localhost:11824 at 03:04:10.507
+starting worker pid=11140 on localhost:11824 at 03:04:10.516
+starting worker pid=9332 on localhost:11824 at 03:04:10.518
+starting worker pid=4140 on localhost:11824 at 03:04:10.527
+starting worker pid=7308 on localhost:11824 at 03:04:10.535
+starting worker pid=12468 on localhost:11824 at 03:04:10.537
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+[1] "Radar_Images/tiff/s_0105xx/s_01053301_tiff.tif"
+[1] "Radar_Images/tiff/s_0503xx/s_05030801_tiff.tif"
+[1] "Radar_Images/tiff/s_0077xx/s_00773002_tiff.tif"
+[1] "Radar_Images/tiff/s_0377xx/s_03777902_tiff.tif"
+[1] "Radar_Images/tiff/s_0094xx/s_00946401_tiff.tif"
+[1] "Radar_Images/tiff/s_0617xx/s_06179401_tiff.tif"
+[1] "Radar_Images/tiff/s_0495xx/s_04959901_tiff.tif"
+[1] "Radar_Images/tiff/s_0455xx/s_04556101_tiff.tif"
+[1] "Radar_Images/tiff/s_0186xx/s_01863201_tiff.tif"
+[1] "Radar_Images/tiff/s_0090xx/s_00909901_tiff.tif"
+[1] "Radar_Images/tiff/s_0342xx/s_03428102_tiff.tif"
+[1] "Radar_Images/tiff/s_0472xx/s_04729401_tiff.tif"
+Time difference of 3.728855 mins
+Time difference of 3.775222 mins
+[1] "Radar_Images/tiff/s_0570xx/s_05704501_tiff.tif"
+Time difference of 3.74055 mins
+Time difference of 3.786855 mins
+[1] "Radar_Images/tiff/s_0601xx/s_06016401_tiff.tif"
+Time difference of 3.756305 mins
+Time difference of 3.802622 mins
+[1] "Radar_Images/tiff/s_0536xx/s_05362901_tiff.tif"
+Time difference of 3.752722 mins
+Time difference of 3.799089 mins
+[1] "Radar_Images/tiff/s_0337xx/s_03374701_tiff.tif"
+Time difference of 3.778027 mins
+Time difference of 3.82426 mins
+[1] "Radar_Images/tiff/s_0262xx/s_02623701_tiff.tif"
+Time difference of 3.778243 mins
+Time difference of 3.824627 mins
+[1] "Radar_Images/tiff/s_0378xx/s_03785601_tiff.tif"
+Time difference of 3.902443 mins
+Time difference of 3.948643 mins
+[1] "Radar_Images/tiff/s_0069xx/s_00699001_tiff.tif"
+Time difference of 3.917343 mins
+Time difference of 3.963543 mins
+[1] "Radar_Images/tiff/s_0049xx/s_00498201_tiff.tif"
+Time difference of 3.958493 mins
+Time difference of 4.004843 mins
+[1]Time difference of 3.96356  "Radar_Images/tiff/s_0378xx/s_03787401_tiff.tif"
+
+Time difference of 4.009794 mins
+[1] "Radar_Images/tiff/s_0274xx/s_02744301_tiff.tif"
+starting worker pid=12912 on localhost:11169 at 03:15:04.879
+starting worker pid=13032 on localhost:11169 at 03:15:04.894
+starting worker pid=12344 on localhost:11169 at 03:15:04.896
+starting worker pid=6272 on localhost:11169 at 03:15:04.900
+starting worker pid=12372 on localhost:11169 at 03:15:04.909
+starting worker pid=2808 on localhost:11169 at 03:15:04.918
+starting worker pid=12340 on localhost:11169 at 03:15:04.918
+starting worker pid=1620 on localhost:11169 at 03:15:04.920
+starting worker pid=14628 on localhost:11169 at 03:15:04.927
+starting worker pid=14240 on localhost:11169 at 03:15:04.932
+starting worker pid=2052 on localhost:11169 at 03:15:04.933
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+[1] "Radar_Images/tiff/s_0105xx/s_01053301_tiff.tif"
+[1] "Radar_Images/tiff/s_0037xx/s_00370302_tiff.tif"
+[1] "Radar_Images/tiff/s_0373xx/s_03737401_tiff.tif"
+[1] "Radar_Images/tiff/s_0276xx/s_02765301_tiff.tif"
+[1] "Radar_Images/tiff/s_0330xx/s_03308401_tiff.tif"
+[1] "Radar_Images/tiff/s_0327xx/s_03278001_tiff.tif"
+[1] "Radar_Images/tiff/s_0447xx/s_04475201_tiff.tif"
+[1] "Radar_Images/tiff/s_0593xx/s_05936601_tiff.tif"
+[1] "Radar_Images/tiff/s_0259xx/s_02591401_tiff.tif"
+[1] "Radar_Images/tiff/s_0583xx/s_05836301_tiff.tif"
+[1] "Radar_Images/tiff/s_0474xx/s_04749101_tiff.tif"
+Time difference of 3.784916 mins
+Time difference of 3.827991 mins
+[1] "Radar_Images/tiff/s_0069xx/s_00699001_tiff.tif"
+Time difference of 3.805715 mins
+Time difference of 3.848856 mins
+[1] "Radar_Images/tiff/s_0590xx/s_05909801_tiff.tif"
+Time difference of 3.831365 mins
+Time difference of 3.874673 mins
+[1] "Radar_Images/tiff/s_0167xx/s_01676802_tiff.tif"
+Time difference of 3.859998 mins
+Time difference of 3.903156 mins
+[1] "Radar_Images/tiff/s_0075xx/s_00759703_tiff.tif"
+Time difference of 3.884532 mins
+Time difference of 3.92764 mins
+[1] "Radar_Images/tiff/s_0183xx/s_01832701_tiff.tif"
+Time difference of 3.900281 mins
+Time difference of 3.943356 mins
+[1] "Radar_Images/tiff/s_0459xx/s_04595001_tiff.tif"
+Time difference of 3.921565 mins
+Time difference of 3.964756 mins
+[1] "Radar_Images/tiff/s_0420xx/s_04209001_tiff.tif"
+Time difference of 3.970715 mins
+Time difference of 4.013873 mins
+[1] "Radar_Images/tiff/s_0228xx/s_02282401_tiff.tif"
+Time difference of 4.020145 mins
+Time difference of 4.063324 mins
+[1] "Radar_Images/tiff/s_0273xx/s_02732301_tiff.tif"
+Time difference of 4.043382 mins
+Time difference of 4.08664 mins
+[1] "Radar_Images/tiff/s_0460xx/s_04600301_tiff.tif"
+Time difference of 4.051815 mins
+Time difference of 4.09494 mins
+[1] "Radar_Images/tiff/s_0584xx/s_05841401_tiff.tif"
+Time difference of 3.388957 mins
+Time difference of 7.217913 mins
+[1] "Radar_Images/tiff/s_0480xx/s_04807801_tiff.tif"
+Time difference of 3.374257 mins
+Time difference of 7.248997 mins
+[1] "Radar_Images/tiff/s_0383xx/s_03838701_tiff.tif"
+Time difference of 3.414124 mins
+Time difference of 7.263013 mins
+[1] "Radar_Images/tiff/s_0073xx/s_00736802_tiff.tif"
+Time difference of 3.419307 mins
+Time difference of 7.32253 mins
+[1] "Radar_Images/tiff/s_0448xx/s_04488201_tiff.tif"
+Time difference of 3.543247 mins
+Time difference of 7.471209 mins
+[1] "Radar_Images/tiff/s_0346xx/s_03464801_tiff.tif"
+starting worker pid=14320 on localhost:11579 at 16:16:52.517
+starting worker pid=1264 on localhost:11579 at 16:16:52.543
+starting worker pid=7232 on localhost:11579 at 16:16:52.555
+starting worker pid=11892 on localhost:11579 at 16:16:52.555
+starting worker pid=3804 on localhost:11579 at 16:16:52.562
+starting worker pid=10120 on localhost:11579 at 16:16:52.566
+starting worker pid=12356 on localhost:11579 at 16:16:52.571
+starting worker pid=18068 on localhost:11579 at 16:16:52.573
+starting worker pid=3384 on localhost:11579 at 16:16:52.581
+starting worker pid=18360 on localhost:11579 at 16:16:52.581
+starting worker pid=16448 on localhost:11579 at 16:16:52.582
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+[1] "Radar_Images/tiff/s_0105xx/s_01053301_tiff.tif"
+[1] "Radar_Images/tiff/s_0503xx/s_05030801_tiff.tif"
+[1] "Radar_Images/tiff/s_0077xx/s_00773002_tiff.tif"
+[1] "Radar_Images/tiff/s_0094xx/s_00946401_tiff.tif"
+[1] "Radar_Images/tiff/s_0617xx/s_06179401_tiff.tif"
+[1] "Radar_Images/tiff/s_0495xx/s_04959901_tiff.tif"
+[1] "Radar_Images/tiff/s_0455xx/s_04556101_tiff.tif"
+[1] "Radar_Images/tiff/s_0377xx/s_03777902_tiff.tif"
+[1] "Radar_Images/tiff/s_0186xx/s_01863201_tiff.tif"
+[1] "Radar_Images/tiff/s_0472xx/s_04729401_tiff.tif"
+[1] "Radar_Images/tiff/s_0090xx/s_00909901_tiff.tif"
+[1] "Radar_Images/tiff/s_0342xx/s_03428102_tiff.tif"
+Time difference of 3.694127 mins
+Time difference of 3.739961 mins
+[1] "Radar_Images/tiff/s_0262xx/s_02623701_tiff.tif"
+Time difference of 3.717511 mins
+Time difference of 3.763278 mins
+[1] "Radar_Images/tiff/s_0536xx/s_05362901_tiff.tif"
+Time difference of 3.743711 mins
+Time difference of 3.789461 mins
+[1] "Radar_Images/tiff/s_0601xx/s_06016401_tiff.tif"
+Time difference of 3.744444 mins
+Time difference of 3.790294 mins
+[1] "Radar_Images/tiff/s_0337xx/s_03374701_tiff.tif"
+Time difference of 3.749311 mins
+Time difference of 3.795144 mins
+[1] "Radar_Images/tiff/s_0378xx/s_03785601_tiff.tif"
+starting worker pid=6236 on localhost:11377 at 16:24:32.034
+starting worker pid=8628 on localhost:11377 at 16:24:32.079
+starting worker pid=8544 on localhost:11377 at 16:24:32.079
+starting worker pid=6112 on localhost:11377 at 16:24:32.079
+starting worker pid=15992 on localhost:11377 at 16:24:32.079
+starting worker pid=2948 on localhost:11377 at 16:24:32.079
+starting worker pid=8624 on localhost:11377 at 16:24:32.079
+starting worker pid=13672 on localhost:11377 at 16:24:32.079
+starting worker pid=2888 on localhost:11377 at 16:24:32.079
+starting worker pid=13520 on localhost:11377 at 16:24:32.080
+starting worker pid=15136 on localhost:11377 at 16:24:32.079
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+Loading required package: sp
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+
+Attaching package: 'e1071'
+
+The following object is masked from 'package:raster':
+
+    interpolate
+
+[1] "Radar_Images/tiff/s_0105xx/s_01053301_tiff.tif"
+[1] "Radar_Images/tiff/s_0503xx/s_05030801_tiff.tif"
+Radar_Images/tiff/s_0090xx/s_00909901_tiff.tif"
+[1] "Radar_Images/tiff/s_0077xx/s_00773002_tiff.tif"
+[1] "Radar_Images/tiff/s_0094xx/s_00946401_tiff.tif"
+[1] "Radar_Images/tiff/s_0495xx/s_04959901_tiff.tif"
+[1] "Radar_Images/tiff/s_0455xx/s_04556101_tiff.tif"
+[1] "Radar_Images/tiff/s_0342xx/s_03428102_tiff.tif"
+[1] "Radar_Images/tiff/s_0186xx/s_01863201_tiff.tif"
+[1] "Radar_Images/tiff/s_0617xx/s_06179401_tiff.tif"
+[1] "Radar_Images/tiff/s_0377xx/s_03777902_tiff.tif"
+[1] "Radar_Images/tiff/s_0472xx/s_04729401_tiff.tif"
+Time difference of 18.15596 mins
+Time difference of 20.04828 mins
+[1] "Radar_Images/tiff/s_0536xx/s_05362901_tiff.tif"
+Time difference of 18.66461 mins
+Time difference of 20.55698 mins
+[1] "Radar_Images/tiff/s_0337xx/s_03374701_tiff.tif"
+Time difference of 18.68066 mins
+Time difference of 20.57308 mins
+[1] "Radar_Images/tiff/s_0262xx/s_02623701_tiff.tif"
+Time difference of 19.06127 mins
+Time difference of 20.95367 mins
+[1] "Radar_Images/tiff/s_0264xx/s_02644401_tiff.tif"
+Time difference of 19.41866 mins
+Time difference of 21.31099 mins
+[1] "Radar_Images/tiff/s_0601xx/s_06016401_tiff.tif"
+Time difference of 19.42644 mins
+Time difference of 21.31882 mins
+[1] "Radar_Images/tiff/s_0378xx/s_03787401_tiff.tif"
+Time difference of 19.56969 mins
+Time difference of 21.46213 mins
+[1] "Radar_Images/tiff/s_0378xx/s_03785601_tiff.tif"
+Time difference of 19.64104 mins
+Time difference of 21.53338 mins
+[1] "Radar_Images/tiff/s_0092xx/s_00921503_tiff.tif"
+Time difference of 19.64871 mins
+Time difference of 21.54098 mins
+[1] "Radar_Images/tiff/s_0274xx/s_02744301_tiff.tif"
+Time difference of 19.78216 mins
+Time difference of 21.67443 mins
+[1] "Radar_Images/tiff/s_0049xx/s_00498201_tiff.tif"
+Time difference of 19.86677 mins
+Time difference of 21.75905 mins
+[1] "Radar_Images/tiff/s_0570xx/s_05704501_tiff.tif"
+Time difference of 20.87245 mins
+Time difference of 22.76471 mins
+[1] "Radar_Images/tiff/s_0069xx/s_00699001_tiff.tif"
+Time difference of 17.60488 mins
+Time difference of 38.18545 mins
+[1] "Radar_Images/tiff/s_0344xx/s_03448901_tiff.tif"
+Time difference of 18.23148 mins
+Time difference of 38.3089 mins
+[1] "Radar_Images/tiff/s_0571xx/s_05711901_tiff.tif"
