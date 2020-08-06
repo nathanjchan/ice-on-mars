@@ -187,8 +187,18 @@ extractFeatures2 = function(tif_path) {
   # list for return
   features = c()
 
-  # density
-  features = append(features, getDensity(radar_mat))
+  # # mass
+  # mass = sum(radar_mat[radar_mat > 128])
+  # features = append(features, mass)
+  # 
+  # # volume
+  # volume = length(radar_mat[radar_mat > 128])
+  # features = append(features, volume)
+  
+  # GLCM
+  radar_smol2 = aggregate(radar_crop, fact=2)
+  features = append(features, getGLCM(radar_smol2, window_size = 3))
+  features = append(features, getGLCM(radar_smol2, window_size = 9))
   
   # end
   end_time = Sys.time()
