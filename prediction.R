@@ -17,9 +17,11 @@ big = read.csv("bigClassification196.csv")
 big = big[, !(colnames(big) %in% "X")]
 big$ice = as.factor(big$ice)
 
-#big2 = read.csv("bigClassification2.csv")
-#big2 = big2[, !(colnames(big2) %in% "X")]
-#big = cbind(big, big2)
+big2 = read.csv("bigClassificationFractal.csv")
+big2 = big2[, !(colnames(big2) %in% "X")]
+big = cbind(big, big2)
+big = big[-c(22, 26, 42, 54, 104, 123, 138, 139, 160, 180, 190, 205, 215, 242, 252, 257, 304, 333, 357,
+             385, 386, 413, 415, 429, 431, 444, 455, 456, 467, 493),]
 
 num_features = ncol(big)
 n = nrow(big)
@@ -46,8 +48,13 @@ print(rf_cv$error.cv)
 rf_tune = tune.randomForest(x, y)
 print(rf_tune)
 
+# indices of samples labeled incorrectly
+# wrong = which(rf_cv$predicted$`270` != big$ice)
+wrong = which(rf_cv$predicted$`222` != big$ice)
+
 # choose variables with highest importance
-importance4 = importance[importance$MeanDecreaseAccuracy > 3.5,]
+importance4 = importance[importance$MeanDecreaseAccuracy > 4,]
+print(nrow(importance4))
 
 # Load/subset data again
 x = big[,rownames(importance4)]
@@ -58,6 +65,8 @@ y_train = y[half1]
 x_test = x[half2,]
 y_test = y[half2]
 
+
+
 # Random Forest again ----
 set.seed(23*3)
 rf_model = randomForest(x = x_train, y = y_train, xtest = x_test, ytest = y_test, importance = TRUE, proximity = TRUE)
@@ -66,6 +75,10 @@ rf_cv = rfcv(trainx = x, trainy = y, cv.fold = 10)
 print(rf_cv$error.cv)
 rf_tune = tune.randomForest(x, y)
 print(rf_tune)
+
+# indices of samples labeled incorrectly
+# wrong4 = which(rf_cv$predicted$`52` != big$ice)
+wrong4 = which(rf_cv$predicted$`51` != big$ice)
 
 
 
@@ -89,6 +102,8 @@ table(svm_predict, y_test)
 # cross validation
 svm_tune = tune.svm(x, y)
 print(svm_tune)
+
+wrong_svm = which(svm_tune$best.model$fitted != big$ice)
 
 
 # K-Nearest Neighbors ----
