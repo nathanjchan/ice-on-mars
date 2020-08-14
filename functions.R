@@ -3,6 +3,7 @@
 library(raster)
 library(e1071)
 library(glcm)
+# library(radiomics)
 
 
 
@@ -138,6 +139,18 @@ extractFeatures = function(tif_path) {
   features = append(features, getGLCM(radar_smol2, window_size = 63))
   features = append(features, getGLCM(radar_smol2, window_size = 127))
   
+  # fractal dimension
+  fractal7 = fd.estimate(as.matrix(radar_crop), window.size = 7)
+  fractal15 = fd.estimate(as.matrix(radar_crop), window.size = 15)
+  fractal31 = fd.estimate(as.matrix(radar_crop), window.size = 31)
+  fractal63 = fd.estimate(as.matrix(radar_crop), window.size = 63)
+  fractal127 = fd.estimate(as.matrix(radar_crop), window.size = 127)
+  features = append(features, getStatistics(fractal7$fd))
+  features = append(features, getStatistics(fractal15$fd))
+  features = append(features, getStatistics(fractal31$fd))
+  features = append(features, getStatistics(fractal63$fd))
+  features = append(features, getStatistics(fractal127$fd))
+  
   # end
   end_time = Sys.time()
   time_taken = end_time - start_time
@@ -187,18 +200,6 @@ extractFeatures2 = function(tif_path) {
   # list for return
   features = c()
 
-  # # mass
-  # mass = sum(radar_mat[radar_mat > 128])
-  # features = append(features, mass)
-  # 
-  # # volume
-  # volume = length(radar_mat[radar_mat > 128])
-  # features = append(features, volume)
-  
-  # GLCM
-  radar_smol2 = aggregate(radar_crop, fact=2)
-  features = append(features, getGLCM(radar_smol2, window_size = 3))
-  features = append(features, getGLCM(radar_smol2, window_size = 9))
   
   # end
   end_time = Sys.time()
