@@ -1,8 +1,8 @@
 # Libraries ----
 
 library(parallel)
-library(fractaldim)
-library(radiomics)
+# library(fractaldim)
+# library(radiomics)
 source("functions.R")
 
 # Global Variables ----
@@ -45,7 +45,7 @@ stopCluster(cl)
 
 features_df2 = as.data.frame(do.call(rbind, features2))
 
-feature_names2 = c(paste0("fractal", 1:8))
+feature_names2 = c(paste0("colot_hist", 1:32))
 num_features2 = length(feature_names2)
 if (num_features2 != ncol(features_df2)) {
   stop("Number of feature names and number of features don't match!")
@@ -53,7 +53,7 @@ if (num_features2 != ncol(features_df2)) {
 colnames(features_df2) = feature_names2
 big2 = features_df2
 
-write.csv(big2, "bigClassificationFractal3.csv")
+write.csv(big2, "bigClassificationColorhist.csv")
 
 
 
