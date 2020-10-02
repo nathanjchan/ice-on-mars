@@ -21,14 +21,15 @@ extractFeatures = function(tif_path) {
   
   # read and crop radar
   radar = raster(tif_path)
-  n = 1000
+  n = 128
   relevant = relevantColumns(ncol(radar), n)
   e = extent(relevant[1] - 1, relevant[n], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
   
   # change resolution
-  radar_smol2 = aggregate(radar_crop, fact=2)
+  # radar_smol2 = aggregate(radar_crop, fact=2)
+  radar_smol2 = radar_crop
   
   # vector for return
   features = c()
@@ -127,11 +128,11 @@ colnames(features_df) = feature_names
 big = features_df[, colnames(features_df) %in% feature_names]
 
 big$ice = as.factor(big$ice)
-write.csv(big, "bigClassificationTest1000.csv")
+write.csv(big, "bigClassificationTest128.csv")
 
 
 
-big = read.csv("bigClassificationTest1000.csv")
+big = read.csv("bigClassificationTest128.csv")
 big = big[, !(colnames(big) %in% "X")]
 big = big[-c(22, 26, 42, 54, 104, 123, 138, 139, 160, 180, 190, 205, 215, 242, 252, 257, 304, 333, 357,
              385, 386, 413, 415, 429, 431, 444, 455, 456, 467, 493),]
