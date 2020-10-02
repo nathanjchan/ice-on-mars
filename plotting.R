@@ -11,5 +11,5 @@ ggmap(world_map) +
   labs(title = "Actual", color = "Ice")
 
 ggmap(world_map) +
-  geom_point(aes(x = center_long - 180, y = center_lat, color = rf_cv$predicted$`270`), data = sample, size = 3) +
+  geom_point(aes(x = center_long - 180, y = center_lat, color = rf_cv$predicted$`228`), data = sample, size = 3) +
   labs(title = "Predicted", color = "Ice")
