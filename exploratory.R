@@ -78,16 +78,10 @@ areaCoords = function(coords) {
 }
 
 getDepthCoords = function(coords) {
-  # Given coordinates to a rectangular area of a radargram, return the depth based on Piqueux et al 2019
+  # Given coordinates to a location, return the depth based on Piqueux et al 2019
   # Note: uses global variable depth_df
-  long_start = coords[1]
-  long_end = coords[2]
-  lat_start = coords[3]
-  lat_end = coords[4]
-  
-  # Find center
-  long_coord = mean(c(long_start, long_end))
-  lat_coord = mean(c(lat_start, lat_end))
+  long_coord = coords[1]
+  lat_coord = coords[2]
   
   # Round to nearest .25 or .75
   long_coord = round((long_coord + 0.25) * 2) / 2 - 0.25
@@ -211,14 +205,15 @@ interTabLat("Radar_Images/geom/s_0016xx/s_00168901_geom.tab")
 
 
 # Giant data frame ----
-# Direction of satellite
-long_dir = lapply(tab_files, interTabLong)
-lat_dir = lapply(tab_files, interTabLat)
 
 # File paths
 lbl_files = allFiles("tiff", "lbl")
 tif_files = allFiles("tiff", "tif")
 tab_files = allFiles("geom", "tab")
+
+# Direction of satellite
+long_dir = lapply(tab_files, interTabLong)
+lat_dir = lapply(tab_files, interTabLat)
 
 # Coordinates
 coords = lapply(lbl_files, parseCoords)
@@ -234,7 +229,7 @@ centers_df = do.call(rbind, centers)
 areas = lapply(coords, areaCoords)
 
 # Depth of Shallow Ice
-depths = lapply(coords, getDepthCoords)
+depths = lapply(centers, getDepthCoords)
 
 # Create the giant thing
 df = do.call(rbind, Map(data.frame, long_start = coords_df[,1], long_end = coords_df[,2],
@@ -242,15 +237,24 @@ df = do.call(rbind, Map(data.frame, long_start = coords_df[,1], long_end = coord
                         center_lat = centers_df[,2], area = areas, depth = depths, 
                         lbl = lbl_files, tif = tif_files, tab = tab_files,
                         long_dir = long_dir, lat_dir = lat_dir))
-write.csv(df, "radar.csv")
+write.csv(df, "radar2.csv")
 
 # Width of Radargram
 widths = lapply(df$tif, radarWidth)
 widths_df = do.call(rbind, widths)
 colnames(widths_df) = "width"
 df = cbind(df, widths_df)
-write.csv(df, "radar.csv")
+write.csv(df, "radar2.csv")
 
+
+
+# REDO ICE DEPTH
+radar = read.csv("radar.csv")
+radar = radar[, !(colnames(radar) %in% "X")]
+centers_df = radar[,5:6]
+depths = apply(centers_df, 1, getDepthCoords)
+radar$depth = depths
+write.csv(radar, "radar2.csv")
 
 
 # Global coverage ----
