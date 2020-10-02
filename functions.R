@@ -12,10 +12,15 @@ sampleTifClassification = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
   # classification: include radargrams with width > 3000
-  df3000 = df[df$width > 3000 & df$corrupt != "bad",]
-  num = nrow(df3000)
+  # df3000 = df[df$width > 3000 & df$corrupt != "bad",]
+  # num = nrow(df3000)
+  # sample_indices = sample(num, n)
+  # sampled = df3000[sample_indices,]
+  
+  df_good = df[df$corrupt != "bad",]
+  num = nrow(df_good)
   sample_indices = sample(num, n)
-  sampled = df3000[sample_indices,]
+  sampled = df_good[sample_indices,]
   
   return(sampled)
 }
@@ -26,10 +31,15 @@ sampleTifRegression = function(n) {
   # Given sample size n, return a sample of radargrams from GLOBAL VARIABLE df
   
   # regression: exclude areas with no shallow ice 
-  df3000 = df[df$width > 3000 & df$depth != -32768 & df$corrupt != "bad",]
-  num = nrow(df3000)
+  # df3000 = df[df$width > 3000 & df$depth != -32768 & df$corrupt != "bad",]
+  # num = nrow(df3000)
+  # sample_indices = sample(num, n)
+  # sampled = df3000[sample_indices,]
+  
+  df_good = df[df$depth != -32768 & df$corrupt != "bad",]
+  num = nrow(df_good)
   sample_indices = sample(num, n)
-  sampled = df3000[sample_indices,]
+  sampled = df_good[sample_indices,]
   
   return(sampled)
 }
@@ -85,7 +95,7 @@ replaceInf = function(x) {
 
 getGLCM = function(radar_smol, window_size) {
   # Given a radargram, calculate the GLCM and return the feature statistics
-  gray = glcm(radar_smol, window = c(window_size, window_size))
+  gray = glcm(radar_smol, window = c(window_size, window_size), shift = c(1, 1))
   correlation = sapply(as.matrix(gray$glcm_correlation), replaceInf)
   stats = c(getStatistics(as.matrix(gray$glcm_mean)),
             getStatistics(as.matrix(gray$glcm_variance)),
@@ -109,56 +119,59 @@ extractFeatures = function(tif_path) {
   start_time = Sys.time()
   
   # read and crop radar
+  width = 64
   radar = raster(tif_path)
-  relevant = relevantColumns(ncol(radar), 3000)
-  e = extent(relevant[1] - 1, relevant[3000], 0, nrow(radar))
+  relevant = relevantColumns(ncol(radar), width)
+  e = extent(relevant[1] - 1, relevant[width], 0, nrow(radar))
   radar_crop = crop(radar, e)
   radar_mat = as.matrix(radar_crop)
   
   # change resolution
-  radar_smol2 = aggregate(radar_crop, fact=2)
+  # radar_smol2 = aggregate(radar_crop, fact=2)
+  radar_smol2 = radar_crop
   
   # vector for return
   features = c()
   
   # color statistics
   features = append(features, getStatistics(radar_mat))
-  
-  # density
-  features = append(features, getDensity(radar_mat))
-  
+
   # color histogram
-  color_hist = hist(radar_mat, breaks = seq(0, 255, l = 26))
+  color_hist = hist(radar_mat, breaks = seq(0, 255, l = 33))
   features = append(features, color_hist$density) # density instead of counts
   
   # gray level co-occurrance matrix
   features = append(features, getGLCM(radar_smol2, window_size = 3))
+  features = append(features, getGLCM(radar_smol2, window_size = 5))
   features = append(features, getGLCM(radar_smol2, window_size = 7))
+  features = append(features, getGLCM(radar_smol2, window_size = 11))
   features = append(features, getGLCM(radar_smol2, window_size = 15))
+  features = append(features, getGLCM(radar_smol2, window_size = 23))
   features = append(features, getGLCM(radar_smol2, window_size = 31))
+  features = append(features, getGLCM(radar_smol2, window_size = 47))
   features = append(features, getGLCM(radar_smol2, window_size = 63))
-  features = append(features, getGLCM(radar_smol2, window_size = 127))
+  # features = append(features, getGLCM(radar_smol2, window_size = 127))
   
   # fractal dimension
-  fractal7 = fd.estimate(as.matrix(radar_crop), window.size = 7)
-  fractal15 = fd.estimate(as.matrix(radar_crop), window.size = 15)
-  fractal31 = fd.estimate(as.matrix(radar_crop), window.size = 31)
-  fractal63 = fd.estimate(as.matrix(radar_crop), window.size = 63)
-  fractal127 = fd.estimate(as.matrix(radar_crop), window.size = 127)
-  features = append(features, getStatistics(fractal7$fd))
-  features = append(features, getStatistics(fractal15$fd))
-  features = append(features, getStatistics(fractal31$fd))
-  features = append(features, getStatistics(fractal63$fd))
-  features = append(features, getStatistics(fractal127$fd))
+  # fractal7 = fd.estimate(as.matrix(radar_crop), window.size = 7)
+  # fractal15 = fd.estimate(as.matrix(radar_crop), window.size = 15)
+  # fractal31 = fd.estimate(as.matrix(radar_crop), window.size = 31)
+  # fractal63 = fd.estimate(as.matrix(radar_crop), window.size = 63)
+  # fractal127 = fd.estimate(as.matrix(radar_crop), window.size = 127)
+  # features = append(features, getStatistics(fractal7$fd))
+  # features = append(features, getStatistics(fractal15$fd))
+  # features = append(features, getStatistics(fractal31$fd))
+  # features = append(features, getStatistics(fractal63$fd))
+  # features = append(features, getStatistics(fractal127$fd))
   
   # end
   end_time = Sys.time()
   time_taken = end_time - start_time
   total_time_taken = end_time - global_start_time
-  #global_i <<- global_i + 1
+  # global_i <<- global_i + 1
   print(time_taken)
   print(total_time_taken)
-  #print(paste0(global_i, "/", global_n))
+  # print(paste0(global_i, "/", global_n))
   return(features)
 }
 
@@ -189,6 +202,7 @@ extractFeatures2 = function(tif_path) {
   # set up
   print(tif_path)
   start_time = Sys.time()
+  rasterOptions(tmpdir = "D:/Mars_Data/__raster__/", tmptime = 2)
   
   # read and crop radar
   radar = raster(tif_path)
@@ -200,6 +214,9 @@ extractFeatures2 = function(tif_path) {
   # list for return
   features = c()
 
+  # color histogram
+  color_hist = hist(radar_mat, breaks = seq(0, 255, l = 33))
+  features = append(features, color_hist$density) # density instead of counts
   
   # end
   end_time = Sys.time()
