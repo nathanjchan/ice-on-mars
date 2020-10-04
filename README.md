@@ -15,6 +15,10 @@ Demonstrates
 - Fluency in R to wrangle and analyze giant datasets (23,650 images, 336 GB)
 - Ability to ask questions, do research, learn, and solve challenging and novel problems
 
+Presents new research on
+- A new application of computer vision and machine learning: quantifying speckle-like interference in ground-penetrating radar images using texture features, which has huge implications for the study of ground-penetrating radar and its applications
+- A new image feature: using the mean, standard deviation, skewness, and kurtosis of the distribution of texture descriptors from many sliding windows as image features, which creates new ways of using features for image retrieval and classification
+
 ## Contents
 - [exploratory.R](https://github.com/nathanjchan/ice-on-mars/blob/master/exploratory.R): find radar image coordinates and the depth of ice at that location and create [radar2.csv](https://github.com/nathanjchan/ice-on-mars/blob/master/radar2.csv)
 - [corrupted.R](https://github.com/nathanjchan/ice-on-mars/blob/master/corrupted.R): find images with processing errors
