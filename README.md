@@ -24,7 +24,7 @@ Presents new research on
 - [corrupted.R](https://github.com/nathanjchan/ice-on-mars/blob/master/corrupted.R): find images with processing errors
 - [functions.R](https://github.com/nathanjchan/ice-on-mars/blob/master/functions.R): functions to calculate texture features from each image and create [sample23650.csv](https://github.com/nathanjchan/ice-on-mars/blob/master/sample23650.csv)
 - [features.R](https://github.com/nathanjchan/ice-on-mars/blob/master/features.R): extract texture features from gray-level co-occurance matrix
-- [prediction.R](https://github.com/nathanjchan/ice-on-mars/blob/master/predictions.R): apply random forest to predict locations of ice from image
+- [prediction.R](https://github.com/nathanjchan/ice-on-mars/blob/master/prediction.R): apply random forest to predict locations of ice from image
 - [analysis.R](https://github.com/nathanjchan/ice-on-mars/blob/master/analysis.R): create figures for locations of correctly classified and misclassifed radar images
 
 # Research Paper
